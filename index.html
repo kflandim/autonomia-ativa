@@ -1,0 +1,803 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kit Mobilidade Reduzida</title>
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Lexend:wght@500;700;800&display=swap">
+<style>
+body{margin:0}
+*{box-sizing:border-box}
+.upsell{display:none;position:fixed;top:0;right:0;bottom:0;left:0;z-index:100;background:rgba(11,74,71,.86);align-items:center;justify-content:center;padding:20px;overflow:auto}
+.upsell:target{display:flex}
+.marquee{overflow:hidden}
+.marquee-track{display:flex;width:max-content;animation:marquee 80s linear infinite}
+.marquee:hover .marquee-track{animation-play-state:paused}
+.marquee-set{display:flex;gap:20px;padding-right:20px}
+@keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.shot{background-color:#E7F3F0;background-repeat:no-repeat}
+.shot-full{background-color:transparent;background-image:url(img/mockup.webp);background-size:100% 100%}
+.shot-a{background-image:url(img/mockup.webp);background-size:195.9% auto;background-position:0% 5.9%}
+.shot-b{background-image:url(img/mockup.webp);background-size:191.7% auto;background-position:100% 5.9%}
+.shot-c{background-image:url(img/mockup.webp);background-size:100% auto;background-position:0% 100%}
+.shot-1{background-image:url(img/mockup.webp);background-size:380% auto;background-position:0% 9.9%}
+.shot-2{background-image:url(img/mockup.webp);background-size:380% auto;background-position:66% 5.3%}
+.shot-3{background-image:url(img/mockup.webp);background-size:321.5% auto;background-position:1.2% 81.7%}
+.shot-4{background-image:url(img/mockup.webp);background-size:179% auto;background-position:46.9% 60%}
+</style>
+
+<style>
+
+
+
+
+.card{flex:none;width:280px;height:373px;background:#FFFFFF;border:1px solid #D4E9E5;border-radius:16px;overflow:hidden;display:flex;flex-direction:column;box-shadow:0 4px 14px rgba(11,74,71,.15);font-family:'Atkinson Hyperlegible',system-ui,sans-serif;color:#17302E}
+.hdr{background:#0E6B66;color:#FFFFFF;font:800 11px/1 Lexend,sans-serif;letter-spacing:.06em;padding:10px 14px}
+.ttl{font:800 17px/1.15 Lexend,sans-serif;padding:12px 14px 0}
+.sub{font-size:11.5px;line-height:1.25;color:#4A625F;padding:3px 14px 4px}
+.step{padding:6px 14px 0;display:flex;flex-direction:column;gap:5px}
+.srow{display:flex;gap:8px;align-items:center}
+.num{flex:none;width:20px;height:20px;border-radius:50%;background:#0E6B66;color:#FFFFFF;font:700 11px/1 Lexend,sans-serif;display:flex;align-items:center;justify-content:center}
+.st{font-weight:700;font-size:12px;line-height:1.2}
+.sr{font-size:10.5px;color:#4A625F;line-height:1.2}
+.ill{height:84px;background:#FFFFFF;border:1px solid #E3EEEC;border-radius:10px;overflow:hidden;display:flex;align-items:center;justify-content:center}
+.ill-tall{height:150px}
+.ill img{display:block;max-width:100%;max-height:100%;width:auto;height:auto}
+.tip{margin-top:auto;background:#0B4A47;color:#FFFFFF;font-size:11px;line-height:1.3;padding:9px 14px}
+.row{display:flex;gap:8px;align-items:center;padding:0 14px;height:30px}
+.day{flex:none;width:64px;background:#0E6B66;color:#FFFFFF;font:700 10.5px/1 Lexend,sans-serif;padding:7px 0;border-radius:8px;text-align:center}
+.dayalt{background:#1F5FA3}
+.what{font-size:11.5px;color:#17302E}
+.chk{display:flex;gap:8px;align-items:flex-start;padding:0 14px;font-size:11.5px;line-height:1.3;margin-bottom:8px}
+.chk svg{flex:none;width:14px;height:14px;margin-top:1px}
+
+</style>
+</head>
+<body>
+
+<div style="width: 100%; background: #F5F9F7; color: #17302E; font-family: 'Atkinson Hyperlegible', system-ui, sans-serif; font-size: 16px; line-height: 1.5">
+
+<!-- Faixa com contagem regressiva -->
+<div style="background: #0B4A47; color: #FFFFFF; padding: 14px 20px; display: flex; flex-wrap: wrap; gap: 10px 18px; align-items: center; justify-content: center; text-align: center">
+<div style="font-size: 14px; font-weight: 700; letter-spacing: 0.06em">DESCONTO ESPECIAL DISPONÍVEL SÓ ATÉ</div>
+<div style="display: flex; gap: 8px">
+<div style="background: #FFFFFF; color: #0B4A47; border-radius: 8px; padding: 4px 10px; min-width: 56px; font-family: Lexend, sans-serif; font-weight: 800; font-size: 20px; line-height: 1.1"><span id="mm">00</span><div style="font-size: 10px; font-weight: 700; letter-spacing: 0.06em">MIN</div></div>
+<div style="background: #F2B84B; color: #17302E; border-radius: 8px; padding: 4px 10px; min-width: 56px; font-family: Lexend, sans-serif; font-weight: 800; font-size: 20px; line-height: 1.1"><span id="ss">00</span><div style="font-size: 10px; font-weight: 700; letter-spacing: 0.06em">SEG</div></div>
+</div>
+</div>
+
+<!-- Hero -->
+<div style="padding: 24px 20px 36px">
+<div style="max-width: 720px; margin: 0 auto; display: flex; flex-direction: column; gap: 16px; align-items: center; text-align: center">
+<div style="background: #DDEEEA; color: #0B4A47; font-weight: 700; font-size: 19px; line-height: 1.3; padding: 12px 22px; border-radius: 999px"><span aria-label="5 estrelas" style="color: #C98A00; letter-spacing: 2px; margin-right: 8px; font-size: 22px">★★★★★</span>+1500 profissionais utilizando</div>
+<h1 style="margin: 0; font-family: Lexend, system-ui, sans-serif; font-weight: 800; font-size: 32px; line-height: 1.15; letter-spacing: -0.01em">Exercícios seguros para idosos com <span style="color: #0E6B66">mobilidade reduzida</span></h1>
+<div class="shot shot-full" role="img" aria-label="Kit de exercícios para idosos em celular, notebook e cartilhas impressas" style="width: 100%; max-width: 420px; aspect-ratio: 1 / 1; border-radius: 24px"></div>
+<a href="#planos" style="display: inline-flex; align-items: center; justify-content: center; min-height: 60px; padding: 0 40px; border-radius: 14px; background: #B8501A; color: #FFFFFF; font-family: Lexend, system-ui, sans-serif; font-weight: 700; font-size: 19px; text-decoration: none">QUERO O MEU KIT</a>
+<div style="font-size: 15px; color: #4A625F">Compra 100% segura · Acesso imediato · Garantia de 7 dias</div>
+</div>
+</div>
+
+<!-- O que você vai receber -->
+<div style="background: #FFFFFF; padding: 40px 20px">
+<div style="max-width: 1040px; margin: 0 auto; display: flex; flex-direction: column; gap: 22px">
+<h2 style="margin: 0; text-align: center; font-family: Lexend, system-ui, sans-serif; font-weight: 800; font-size: 26px; line-height: 1.2">O que você vai receber no <span style="color: #0E6B66">material</span></h2>
+<div style="display: flex; flex-wrap: wrap; gap: 12px">
+<div style="flex: 1 1 260px; background: #F5F9F7; border-radius: 16px; padding: 16px 18px; display: flex; flex-direction: column; gap: 6px">
+<div style="display: flex; gap: 12px; align-items: center"><div aria-hidden="true" style="flex: none; width: 42px; height: 42px; border-radius: 50%; background: #DDEEEA; font-size: 22px; line-height: 1; display: flex; align-items: center; justify-content: center">🙆</div><h3 style="margin: 0; font-family: Lexend, system-ui, sans-serif; font-weight: 700; font-size: 18px">Mobilidade: pescoço e ombros</h3></div>
+<p style="margin: 0; color: #4A625F">Movimentos lentos e suaves para aliviar a rigidez e manter a mobilidade, feitos sentado.</p>
+</div>
+<div style="flex: 1 1 260px; background: #F5F9F7; border-radius: 16px; padding: 16px 18px; display: flex; flex-direction: column; gap: 6px">
+<div style="display: flex; gap: 12px; align-items: center"><div aria-hidden="true" style="flex: none; width: 42px; height: 42px; border-radius: 50%; background: #DDEEEA; font-size: 22px; line-height: 1; display: flex; align-items: center; justify-content: center">💪</div><h3 style="margin: 0; font-family: Lexend, system-ui, sans-serif; font-weight: 700; font-size: 18px">Braços e mãos</h3></div>
+<p style="margin: 0; color: #4A625F">Exercícios com apoio para manter a força e a funcionalidade nas atividades do dia a dia.</p>
+</div>
+<div style="flex: 1 1 260px; background: #F5F9F7; border-radius: 16px; padding: 16px 18px; display: flex; flex-direction: column; gap: 6px">
+<div style="display: flex; gap: 12px; align-items: center"><div aria-hidden="true" style="flex: none; width: 42px; height: 42px; border-radius: 50%; background: #DDEEEA; font-size: 22px; line-height: 1; display: flex; align-items: center; justify-content: center">🦵</div><h3 style="margin: 0; font-family: Lexend, system-ui, sans-serif; font-weight: 700; font-size: 18px">Pernas e joelhos</h3></div>
+<p style="margin: 0; color: #4A625F">Fortalecimento adaptado, sentado na cadeira, para dar mais segurança ao levantar e se locomover.</p>
+</div>
+<div style="flex: 1 1 260px; background: #F5F9F7; border-radius: 16px; padding: 16px 18px; display: flex; flex-direction: column; gap: 6px">
+<div style="display: flex; gap: 12px; align-items: center"><div aria-hidden="true" style="flex: none; width: 42px; height: 42px; border-radius: 50%; background: #DDEEEA; font-size: 22px; line-height: 1; display: flex; align-items: center; justify-content: center">⚖️</div><h3 style="margin: 0; font-family: Lexend, system-ui, sans-serif; font-weight: 700; font-size: 18px">Equilíbrio e postura</h3></div>
+<p style="margin: 0; color: #4A625F">Treinos sempre com um ponto de apoio, como cadeira ou parede, para mais estabilidade no dia a dia.</p>
+</div>
+<div style="flex: 1 1 260px; background: #F5F9F7; border-radius: 16px; padding: 16px 18px; display: flex; flex-direction: column; gap: 6px">
+<div style="display: flex; gap: 12px; align-items: center"><div aria-hidden="true" style="flex: none; width: 42px; height: 42px; border-radius: 50%; background: #DDEEEA; font-size: 22px; line-height: 1; display: flex; align-items: center; justify-content: center">🤸</div><h3 style="margin: 0; font-family: Lexend, system-ui, sans-serif; font-weight: 700; font-size: 18px">Alongamento geral</h3></div>
+<p style="margin: 0; color: #4A625F">Alongamentos confortáveis, respeitando os limites de cada pessoa, para manter a flexibilidade.</p>
+</div>
+<div style="flex: 1 1 260px; background: #F5F9F7; border-radius: 16px; padding: 16px 18px; display: flex; flex-direction: column; gap: 6px">
+<div style="display: flex; gap: 12px; align-items: center"><div aria-hidden="true" style="flex: none; width: 42px; height: 42px; border-radius: 50%; background: #DDEEEA; font-size: 22px; line-height: 1; display: flex; align-items: center; justify-content: center">📅</div><h3 style="margin: 0; font-family: Lexend, system-ui, sans-serif; font-weight: 700; font-size: 18px">Sugestão de rotina semanal</h3></div>
+<p style="margin: 0; color: #4A625F">Um plano pronto, de segunda a domingo, que combina os blocos e pode ser adaptado à rotina.</p>
+</div>
+</div>
+<div style="text-align: center; background: #0B4A47; color: #FFFFFF; border-radius: 16px; padding: 16px 18px">
+<div style="font-family: Lexend, system-ui, sans-serif; font-weight: 700; font-size: 18px">Para usar em casa, em clínicas, academias e grupos</div>
+<p style="margin: 8px 0 0; color: #D4E9E5">Serve para atendimento individual, em família ou em turma, por cuidadores e profissionais.</p>
+</div>
+</div>
+</div>
+
+<!-- Por que escolher -->
+<div style="padding: 40px 20px">
+<div style="max-width: 860px; margin: 0 auto; display: flex; flex-direction: column; gap: 20px">
+<h2 style="margin: 0; text-align: center; font-family: Lexend, system-ui, sans-serif; font-weight: 800; font-size: 26px; line-height: 1.2">Por que famílias e profissionais escolhem <span style="color: #0E6B66">este kit</span>?</h2>
+<p style="margin: 0">Este kit é um guia prático de exercícios para idosos com mobilidade reduzida, organizado em <strong>blocos, com passo a passo ilustrado</strong> e repetições indicadas, para você saber exatamente o que fazer em cada dia.</p>
+<p style="margin: 0">Com ele, você para de improvisar. Cada bloco traz <strong>movimentos feitos sentado ou com apoio</strong>, a quantidade de repetições e uma dica de segurança para fazer tudo com tranquilidade.</p>
+<p style="margin: 0">É uma forma simples de ajudar o idoso a se movimentar com <strong>mais autonomia</strong>, e de dar a quem cuida, a quem treina e a quem atende uma rotina clara para seguir.</p>
+</div>
+</div>
+
+<!-- Situação -->
+<div style="background: #FFFFFF; padding: 40px 20px">
+<div style="max-width: 860px; margin: 0 auto; display: flex; flex-direction: column; gap: 20px">
+<h2 style="margin: 0; text-align: center; font-family: Lexend, system-ui, sans-serif; font-weight: 800; font-size: 26px; line-height: 1.2">Você conhece essa <span style="color: #0E6B66">situação</span>?</h2>
+<div style="display: flex; flex-direction: column; gap: 10px">
+<div style="background: #F5F9F7; border-radius: 16px; padding: 12px 16px; display: flex; gap: 12px; align-items: flex-start"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#B8501A" stroke-width="2.4" stroke-linecap="round" aria-hidden="true" style="flex: none; margin-top: 2px"><path d="M6 6l12 12M18 6L6 18"/></svg><span>Procurar exercícios na internet sem saber quais são seguros para quem tem limitação de movimento.</span></div>
+<div style="background: #F5F9F7; border-radius: 16px; padding: 12px 16px; display: flex; gap: 12px; align-items: flex-start"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#B8501A" stroke-width="2.4" stroke-linecap="round" aria-hidden="true" style="flex: none; margin-top: 2px"><path d="M6 6l12 12M18 6L6 18"/></svg><span>Repetir sempre os mesmos movimentos até a pessoa perder a vontade de continuar.</span></div>
+<div style="background: #F5F9F7; border-radius: 16px; padding: 12px 16px; display: flex; gap: 12px; align-items: flex-start"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#B8501A" stroke-width="2.4" stroke-linecap="round" aria-hidden="true" style="flex: none; margin-top: 2px"><path d="M6 6l12 12M18 6L6 18"/></svg><span>Querer ajudar um familiar a se movimentar, mas não saber por onde começar.</span></div>
+<div style="background: #F5F9F7; border-radius: 16px; padding: 12px 16px; display: flex; gap: 12px; align-items: flex-start"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#B8501A" stroke-width="2.4" stroke-linecap="round" aria-hidden="true" style="flex: none; margin-top: 2px"><path d="M6 6l12 12M18 6L6 18"/></svg><span>Gastar horas montando uma sessão do zero a cada atendimento.</span></div>
+</div>
+<p style="margin: 0; text-align: center; font-family: Lexend, system-ui, sans-serif; font-weight: 700; font-size: 18px; line-height: 1.35">O problema não é falta de vontade. É faltar um material organizado, simples e pensado para mobilidade reduzida.</p>
+</div>
+</div>
+
+<!-- Páginas -->
+<div style="padding: 40px 20px">
+<div style="max-width: 1040px; margin: 0 auto; display: flex; flex-direction: column; gap: 22px">
+<h2 style="margin: 0; text-align: center; font-family: Lexend, system-ui, sans-serif; font-weight: 800; font-size: 26px; line-height: 1.2">Veja um pouco das <span style="color: #0E6B66">páginas</span></h2>
+</div>
+<div class="marquee" role="region" aria-label="Páginas do kit" style="margin: 20px -20px 0">
+<div class="marquee-track">
+<div class="marquee-set">
+<div style="display: flex; flex: none; gap: 20px; padding-right: 20px; align-items: flex-start">
+
+<!-- Cartão 1: mobilidade -->
+<div class="card">
+<div class="hdr">BLOCO 1 · MOBILIDADE</div>
+<div class="ttl">Pescoço e ombros</div>
+<div class="sub">Alivia tensões e melhora a mobilidade</div>
+<div class="step">
+<div class="srow"><div class="num">1</div><div><div class="st">Rotação de pescoço (lenta)</div><div class="sr">5 repetições para cada lado</div></div></div>
+<div class="ill"><img src="img/neck.webp" alt="Mulher idosa girando o pescoço para os lados, sentada"></div>
+</div>
+<div class="step">
+<div class="srow"><div class="num">2</div><div><div class="st">Elevação e relaxamento de ombros</div><div class="sr">10 repetições</div></div></div>
+<div class="ill"><img src="img/ombros.webp" alt="Mulher idosa elevando e relaxando os ombros"></div>
+</div>
+<div class="tip"><strong>Dica:</strong> faça os movimentos devagar, sem dor.</div>
+</div>
+
+<!-- Cartão 2: braços e mãos -->
+<div class="card">
+<div class="hdr">BLOCO 2 · BRAÇOS E MÃOS</div>
+<div class="ttl">Braços e mãos</div>
+<div class="sub">Mantém a força e a funcionalidade</div>
+<div class="step">
+<div class="srow"><div class="num">1</div><div><div class="st">Elevação dos braços (com apoio)</div><div class="sr">10 repetições</div></div></div>
+<div class="ill"><img src="img/bracos.webp" alt="Mulher idosa sentada levantando os braços"></div>
+</div>
+<div class="step">
+<div class="srow"><div class="num">2</div><div><div class="st">Abertura e fechamento das mãos</div><div class="sr">10 repetições</div></div></div>
+<div class="ill"><img src="img/maos.webp" alt="Mão aberta e depois fechada"></div>
+</div>
+<div class="tip"><strong>Dica:</strong> mantenha as costas apoiadas na cadeira.</div>
+</div>
+
+<!-- Cartão 3: pernas e joelhos -->
+<div class="card">
+<div class="hdr">BLOCO 3 · MEMBROS INFERIORES</div>
+<div class="ttl">Pernas e joelhos</div>
+<div class="sub">Fortalece e melhora o equilíbrio</div>
+<div class="step">
+<div class="srow"><div class="num">1</div><div><div class="st">Extensão de joelho (sentado)</div><div class="sr">10 repetições em cada perna</div></div></div>
+<div class="ill ill-tall"><img src="img/joelho.webp" alt="Mulher idosa sentada estendendo a perna"></div>
+</div>
+<div class="step">
+<div class="srow"><div class="num">2</div><div><div class="st">Elevação de calcanhar</div><div class="sr">12 repetições</div></div></div>
+</div>
+<div class="tip"><strong>Dica:</strong> movimento lento e controlado.</div>
+</div>
+
+<!-- Cartão 4: equilíbrio -->
+<div class="card">
+<div class="hdr">BLOCO 4 · EQUILÍBRIO</div>
+<div class="ttl">Equilíbrio e postura</div>
+<div class="sub">Mais segurança no dia a dia</div>
+<div class="step">
+<div class="srow"><div class="num">1</div><div><div class="st">Apoio unipodal (com apoio)</div><div class="sr">Segure por 10 segundos em cada perna</div></div></div>
+<div class="ill ill-tall"><img src="img/equilibrio.webp" alt="Mulher idosa em pé apoiada em uma cadeira, levantando uma perna"></div>
+</div>
+<div class="step">
+<div class="srow"><div class="num">2</div><div><div class="st">Transferência de peso</div><div class="sr">10 repetições</div></div></div>
+</div>
+<div class="tip"><strong>Dica:</strong> mantenha o olhar à frente e respire normalmente.</div>
+</div>
+
+<!-- Cartão 5: alongamento -->
+<div class="card">
+<div class="hdr">BLOCO 5 · ALONGAMENTO</div>
+<div class="ttl">Alongamento geral</div>
+<div class="sub">Melhora a flexibilidade e reduz a rigidez</div>
+<div class="step">
+<div class="srow"><div class="num">1</div><div><div class="st">Alongamento de braços</div><div class="sr">20 segundos</div></div></div>
+<div class="ill"><img src="img/alongbracos.webp" alt="Mulher idosa alongando o braço à frente do peito"></div>
+</div>
+<div class="step">
+<div class="srow"><div class="num">2</div><div><div class="st">Alongamento de pernas (sentado)</div><div class="sr">20 segundos em cada perna</div></div></div>
+<div class="ill"><img src="img/alongpernas.webp" alt="Mulher idosa sentada alongando a perna"></div>
+</div>
+<div class="tip"><strong>Dica:</strong> respeite seus limites. O alongamento deve ser confortável, sem dor.</div>
+</div>
+
+<!-- Cartão 6: rotina semanal -->
+<div class="card">
+<div class="hdr">BLOCO 6 · ROTINA SEMANAL</div>
+<div class="ttl">Sugestão de plano</div>
+<div class="sub">Você pode adaptar conforme sua rotina</div>
+<div style="display: flex; flex-direction: column; gap: 3px; padding-top: 6px">
+<div class="row"><div class="day">Segunda</div><div class="what">Mobilidade + Braços</div></div>
+<div class="row"><div class="day dayalt">Terça</div><div class="what">Pernas + Equilíbrio</div></div>
+<div class="row"><div class="day">Quarta</div><div class="what">Alongamento + Postura</div></div>
+<div class="row"><div class="day dayalt">Quinta</div><div class="what">Mobilidade + Braços</div></div>
+<div class="row"><div class="day">Sexta</div><div class="what">Pernas + Equilíbrio</div></div>
+<div class="row"><div class="day dayalt">Sábado</div><div class="what">Alongamento geral</div></div>
+<div class="row"><div class="day" style="background: #8AA7A3">Domingo</div><div class="what">Descanso</div></div>
+</div>
+<div class="tip"><strong>Dica:</strong> comece devagar e aumente aos poucos.</div>
+</div>
+
+<!-- Cartão 7: dicas -->
+<div class="card">
+<div class="hdr">DICAS IMPORTANTES</div>
+<div class="ttl">Antes de começar</div>
+<div class="sub">Cuidados simples para se movimentar com segurança</div>
+<div style="padding-top: 8px">
+<div class="chk"><svg viewBox="0 0 24 24" fill="none" stroke="#0E6B66" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Faça os exercícios em um local seguro.</span></div>
+<div class="chk"><svg viewBox="0 0 24 24" fill="none" stroke="#0E6B66" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Use roupas confortáveis.</span></div>
+<div class="chk"><svg viewBox="0 0 24 24" fill="none" stroke="#0E6B66" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Se possível, tenha o apoio de uma cadeira ou parede.</span></div>
+<div class="chk"><svg viewBox="0 0 24 24" fill="none" stroke="#0E6B66" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Respeite seus limites e evite dores.</span></div>
+<div class="chk"><svg viewBox="0 0 24 24" fill="none" stroke="#0E6B66" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Mantenha uma boa hidratação.</span></div>
+<div class="chk"><svg viewBox="0 0 24 24" fill="none" stroke="#0E6B66" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Em caso de dúvida, procure um profissional de saúde.</span></div>
+</div>
+<div class="tip" style="text-align: center; font-weight: 700; font-size: 13px">Movimento é vida!</div>
+</div>
+
+</div>
+<div style="display: flex; flex: none; gap: 20px; padding-right: 20px; align-items: flex-start">
+
+<!-- Cartão 1: mobilidade -->
+<div class="card">
+<div class="hdr">BLOCO 1 · MOBILIDADE</div>
+<div class="ttl">Pescoço e ombros</div>
+<div class="sub">Alivia tensões e melhora a mobilidade</div>
+<div class="step">
+<div class="srow"><div class="num">1</div><div><div class="st">Rotação de pescoço (lenta)</div><div class="sr">5 repetições para cada lado</div></div></div>
+<div class="ill"><img src="img/neck.webp" alt="Mulher idosa girando o pescoço para os lados, sentada"></div>
+</div>
+<div class="step">
+<div class="srow"><div class="num">2</div><div><div class="st">Elevação e relaxamento de ombros</div><div class="sr">10 repetições</div></div></div>
+<div class="ill"><img src="img/ombros.webp" alt="Mulher idosa elevando e relaxando os ombros"></div>
+</div>
+<div class="tip"><strong>Dica:</strong> faça os movimentos devagar, sem dor.</div>
+</div>
+
+<!-- Cartão 2: braços e mãos -->
+<div class="card">
+<div class="hdr">BLOCO 2 · BRAÇOS E MÃOS</div>
+<div class="ttl">Braços e mãos</div>
+<div class="sub">Mantém a força e a funcionalidade</div>
+<div class="step">
+<div class="srow"><div class="num">1</div><div><div class="st">Elevação dos braços (com apoio)</div><div class="sr">10 repetições</div></div></div>
+<div class="ill"><img src="img/bracos.webp" alt="Mulher idosa sentada levantando os braços"></div>
+</div>
+<div class="step">
+<div class="srow"><div class="num">2</div><div><div class="st">Abertura e fechamento das mãos</div><div class="sr">10 repetições</div></div></div>
+<div class="ill"><img src="img/maos.webp" alt="Mão aberta e depois fechada"></div>
+</div>
+<div class="tip"><strong>Dica:</strong> mantenha as costas apoiadas na cadeira.</div>
+</div>
+
+<!-- Cartão 3: pernas e joelhos -->
+<div class="card">
+<div class="hdr">BLOCO 3 · MEMBROS INFERIORES</div>
+<div class="ttl">Pernas e joelhos</div>
+<div class="sub">Fortalece e melhora o equilíbrio</div>
+<div class="step">
+<div class="srow"><div class="num">1</div><div><div class="st">Extensão de joelho (sentado)</div><div class="sr">10 repetições em cada perna</div></div></div>
+<div class="ill ill-tall"><img src="img/joelho.webp" alt="Mulher idosa sentada estendendo a perna"></div>
+</div>
+<div class="step">
+<div class="srow"><div class="num">2</div><div><div class="st">Elevação de calcanhar</div><div class="sr">12 repetições</div></div></div>
+</div>
+<div class="tip"><strong>Dica:</strong> movimento lento e controlado.</div>
+</div>
+
+<!-- Cartão 4: equilíbrio -->
+<div class="card">
+<div class="hdr">BLOCO 4 · EQUILÍBRIO</div>
+<div class="ttl">Equilíbrio e postura</div>
+<div class="sub">Mais segurança no dia a dia</div>
+<div class="step">
+<div class="srow"><div class="num">1</div><div><div class="st">Apoio unipodal (com apoio)</div><div class="sr">Segure por 10 segundos em cada perna</div></div></div>
+<div class="ill ill-tall"><img src="img/equilibrio.webp" alt="Mulher idosa em pé apoiada em uma cadeira, levantando uma perna"></div>
+</div>
+<div class="step">
+<div class="srow"><div class="num">2</div><div><div class="st">Transferência de peso</div><div class="sr">10 repetições</div></div></div>
+</div>
+<div class="tip"><strong>Dica:</strong> mantenha o olhar à frente e respire normalmente.</div>
+</div>
+
+<!-- Cartão 5: alongamento -->
+<div class="card">
+<div class="hdr">BLOCO 5 · ALONGAMENTO</div>
+<div class="ttl">Alongamento geral</div>
+<div class="sub">Melhora a flexibilidade e reduz a rigidez</div>
+<div class="step">
+<div class="srow"><div class="num">1</div><div><div class="st">Alongamento de braços</div><div class="sr">20 segundos</div></div></div>
+<div class="ill"><img src="img/alongbracos.webp" alt="Mulher idosa alongando o braço à frente do peito"></div>
+</div>
+<div class="step">
+<div class="srow"><div class="num">2</div><div><div class="st">Alongamento de pernas (sentado)</div><div class="sr">20 segundos em cada perna</div></div></div>
+<div class="ill"><img src="img/alongpernas.webp" alt="Mulher idosa sentada alongando a perna"></div>
+</div>
+<div class="tip"><strong>Dica:</strong> respeite seus limites. O alongamento deve ser confortável, sem dor.</div>
+</div>
+
+<!-- Cartão 6: rotina semanal -->
+<div class="card">
+<div class="hdr">BLOCO 6 · ROTINA SEMANAL</div>
+<div class="ttl">Sugestão de plano</div>
+<div class="sub">Você pode adaptar conforme sua rotina</div>
+<div style="display: flex; flex-direction: column; gap: 3px; padding-top: 6px">
+<div class="row"><div class="day">Segunda</div><div class="what">Mobilidade + Braços</div></div>
+<div class="row"><div class="day dayalt">Terça</div><div class="what">Pernas + Equilíbrio</div></div>
+<div class="row"><div class="day">Quarta</div><div class="what">Alongamento + Postura</div></div>
+<div class="row"><div class="day dayalt">Quinta</div><div class="what">Mobilidade + Braços</div></div>
+<div class="row"><div class="day">Sexta</div><div class="what">Pernas + Equilíbrio</div></div>
+<div class="row"><div class="day dayalt">Sábado</div><div class="what">Alongamento geral</div></div>
+<div class="row"><div class="day" style="background: #8AA7A3">Domingo</div><div class="what">Descanso</div></div>
+</div>
+<div class="tip"><strong>Dica:</strong> comece devagar e aumente aos poucos.</div>
+</div>
+
+<!-- Cartão 7: dicas -->
+<div class="card">
+<div class="hdr">DICAS IMPORTANTES</div>
+<div class="ttl">Antes de começar</div>
+<div class="sub">Cuidados simples para se movimentar com segurança</div>
+<div style="padding-top: 8px">
+<div class="chk"><svg viewBox="0 0 24 24" fill="none" stroke="#0E6B66" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Faça os exercícios em um local seguro.</span></div>
+<div class="chk"><svg viewBox="0 0 24 24" fill="none" stroke="#0E6B66" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Use roupas confortáveis.</span></div>
+<div class="chk"><svg viewBox="0 0 24 24" fill="none" stroke="#0E6B66" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Se possível, tenha o apoio de uma cadeira ou parede.</span></div>
+<div class="chk"><svg viewBox="0 0 24 24" fill="none" stroke="#0E6B66" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Respeite seus limites e evite dores.</span></div>
+<div class="chk"><svg viewBox="0 0 24 24" fill="none" stroke="#0E6B66" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Mantenha uma boa hidratação.</span></div>
+<div class="chk"><svg viewBox="0 0 24 24" fill="none" stroke="#0E6B66" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Em caso de dúvida, procure um profissional de saúde.</span></div>
+</div>
+<div class="tip" style="text-align: center; font-weight: 700; font-size: 13px">Movimento é vida!</div>
+</div>
+
+</div>
+</div>
+<div class="marquee-set" aria-hidden="true">
+<div style="display: flex; flex: none; gap: 20px; padding-right: 20px; align-items: flex-start">
+
+<!-- Cartão 1: mobilidade -->
+<div class="card">
+<div class="hdr">BLOCO 1 · MOBILIDADE</div>
+<div class="ttl">Pescoço e ombros</div>
+<div class="sub">Alivia tensões e melhora a mobilidade</div>
+<div class="step">
+<div class="srow"><div class="num">1</div><div><div class="st">Rotação de pescoço (lenta)</div><div class="sr">5 repetições para cada lado</div></div></div>
+<div class="ill"><img src="img/neck.webp" alt="Mulher idosa girando o pescoço para os lados, sentada"></div>
+</div>
+<div class="step">
+<div class="srow"><div class="num">2</div><div><div class="st">Elevação e relaxamento de ombros</div><div class="sr">10 repetições</div></div></div>
+<div class="ill"><img src="img/ombros.webp" alt="Mulher idosa elevando e relaxando os ombros"></div>
+</div>
+<div class="tip"><strong>Dica:</strong> faça os movimentos devagar, sem dor.</div>
+</div>
+
+<!-- Cartão 2: braços e mãos -->
+<div class="card">
+<div class="hdr">BLOCO 2 · BRAÇOS E MÃOS</div>
+<div class="ttl">Braços e mãos</div>
+<div class="sub">Mantém a força e a funcionalidade</div>
+<div class="step">
+<div class="srow"><div class="num">1</div><div><div class="st">Elevação dos braços (com apoio)</div><div class="sr">10 repetições</div></div></div>
+<div class="ill"><img src="img/bracos.webp" alt="Mulher idosa sentada levantando os braços"></div>
+</div>
+<div class="step">
+<div class="srow"><div class="num">2</div><div><div class="st">Abertura e fechamento das mãos</div><div class="sr">10 repetições</div></div></div>
+<div class="ill"><img src="img/maos.webp" alt="Mão aberta e depois fechada"></div>
+</div>
+<div class="tip"><strong>Dica:</strong> mantenha as costas apoiadas na cadeira.</div>
+</div>
+
+<!-- Cartão 3: pernas e joelhos -->
+<div class="card">
+<div class="hdr">BLOCO 3 · MEMBROS INFERIORES</div>
+<div class="ttl">Pernas e joelhos</div>
+<div class="sub">Fortalece e melhora o equilíbrio</div>
+<div class="step">
+<div class="srow"><div class="num">1</div><div><div class="st">Extensão de joelho (sentado)</div><div class="sr">10 repetições em cada perna</div></div></div>
+<div class="ill ill-tall"><img src="img/joelho.webp" alt="Mulher idosa sentada estendendo a perna"></div>
+</div>
+<div class="step">
+<div class="srow"><div class="num">2</div><div><div class="st">Elevação de calcanhar</div><div class="sr">12 repetições</div></div></div>
+</div>
+<div class="tip"><strong>Dica:</strong> movimento lento e controlado.</div>
+</div>
+
+<!-- Cartão 4: equilíbrio -->
+<div class="card">
+<div class="hdr">BLOCO 4 · EQUILÍBRIO</div>
+<div class="ttl">Equilíbrio e postura</div>
+<div class="sub">Mais segurança no dia a dia</div>
+<div class="step">
+<div class="srow"><div class="num">1</div><div><div class="st">Apoio unipodal (com apoio)</div><div class="sr">Segure por 10 segundos em cada perna</div></div></div>
+<div class="ill ill-tall"><img src="img/equilibrio.webp" alt="Mulher idosa em pé apoiada em uma cadeira, levantando uma perna"></div>
+</div>
+<div class="step">
+<div class="srow"><div class="num">2</div><div><div class="st">Transferência de peso</div><div class="sr">10 repetições</div></div></div>
+</div>
+<div class="tip"><strong>Dica:</strong> mantenha o olhar à frente e respire normalmente.</div>
+</div>
+
+<!-- Cartão 5: alongamento -->
+<div class="card">
+<div class="hdr">BLOCO 5 · ALONGAMENTO</div>
+<div class="ttl">Alongamento geral</div>
+<div class="sub">Melhora a flexibilidade e reduz a rigidez</div>
+<div class="step">
+<div class="srow"><div class="num">1</div><div><div class="st">Alongamento de braços</div><div class="sr">20 segundos</div></div></div>
+<div class="ill"><img src="img/alongbracos.webp" alt="Mulher idosa alongando o braço à frente do peito"></div>
+</div>
+<div class="step">
+<div class="srow"><div class="num">2</div><div><div class="st">Alongamento de pernas (sentado)</div><div class="sr">20 segundos em cada perna</div></div></div>
+<div class="ill"><img src="img/alongpernas.webp" alt="Mulher idosa sentada alongando a perna"></div>
+</div>
+<div class="tip"><strong>Dica:</strong> respeite seus limites. O alongamento deve ser confortável, sem dor.</div>
+</div>
+
+<!-- Cartão 6: rotina semanal -->
+<div class="card">
+<div class="hdr">BLOCO 6 · ROTINA SEMANAL</div>
+<div class="ttl">Sugestão de plano</div>
+<div class="sub">Você pode adaptar conforme sua rotina</div>
+<div style="display: flex; flex-direction: column; gap: 3px; padding-top: 6px">
+<div class="row"><div class="day">Segunda</div><div class="what">Mobilidade + Braços</div></div>
+<div class="row"><div class="day dayalt">Terça</div><div class="what">Pernas + Equilíbrio</div></div>
+<div class="row"><div class="day">Quarta</div><div class="what">Alongamento + Postura</div></div>
+<div class="row"><div class="day dayalt">Quinta</div><div class="what">Mobilidade + Braços</div></div>
+<div class="row"><div class="day">Sexta</div><div class="what">Pernas + Equilíbrio</div></div>
+<div class="row"><div class="day dayalt">Sábado</div><div class="what">Alongamento geral</div></div>
+<div class="row"><div class="day" style="background: #8AA7A3">Domingo</div><div class="what">Descanso</div></div>
+</div>
+<div class="tip"><strong>Dica:</strong> comece devagar e aumente aos poucos.</div>
+</div>
+
+<!-- Cartão 7: dicas -->
+<div class="card">
+<div class="hdr">DICAS IMPORTANTES</div>
+<div class="ttl">Antes de começar</div>
+<div class="sub">Cuidados simples para se movimentar com segurança</div>
+<div style="padding-top: 8px">
+<div class="chk"><svg viewBox="0 0 24 24" fill="none" stroke="#0E6B66" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Faça os exercícios em um local seguro.</span></div>
+<div class="chk"><svg viewBox="0 0 24 24" fill="none" stroke="#0E6B66" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Use roupas confortáveis.</span></div>
+<div class="chk"><svg viewBox="0 0 24 24" fill="none" stroke="#0E6B66" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Se possível, tenha o apoio de uma cadeira ou parede.</span></div>
+<div class="chk"><svg viewBox="0 0 24 24" fill="none" stroke="#0E6B66" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Respeite seus limites e evite dores.</span></div>
+<div class="chk"><svg viewBox="0 0 24 24" fill="none" stroke="#0E6B66" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Mantenha uma boa hidratação.</span></div>
+<div class="chk"><svg viewBox="0 0 24 24" fill="none" stroke="#0E6B66" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Em caso de dúvida, procure um profissional de saúde.</span></div>
+</div>
+<div class="tip" style="text-align: center; font-weight: 700; font-size: 13px">Movimento é vida!</div>
+</div>
+
+</div>
+<div style="display: flex; flex: none; gap: 20px; padding-right: 20px; align-items: flex-start">
+
+<!-- Cartão 1: mobilidade -->
+<div class="card">
+<div class="hdr">BLOCO 1 · MOBILIDADE</div>
+<div class="ttl">Pescoço e ombros</div>
+<div class="sub">Alivia tensões e melhora a mobilidade</div>
+<div class="step">
+<div class="srow"><div class="num">1</div><div><div class="st">Rotação de pescoço (lenta)</div><div class="sr">5 repetições para cada lado</div></div></div>
+<div class="ill"><img src="img/neck.webp" alt="Mulher idosa girando o pescoço para os lados, sentada"></div>
+</div>
+<div class="step">
+<div class="srow"><div class="num">2</div><div><div class="st">Elevação e relaxamento de ombros</div><div class="sr">10 repetições</div></div></div>
+<div class="ill"><img src="img/ombros.webp" alt="Mulher idosa elevando e relaxando os ombros"></div>
+</div>
+<div class="tip"><strong>Dica:</strong> faça os movimentos devagar, sem dor.</div>
+</div>
+
+<!-- Cartão 2: braços e mãos -->
+<div class="card">
+<div class="hdr">BLOCO 2 · BRAÇOS E MÃOS</div>
+<div class="ttl">Braços e mãos</div>
+<div class="sub">Mantém a força e a funcionalidade</div>
+<div class="step">
+<div class="srow"><div class="num">1</div><div><div class="st">Elevação dos braços (com apoio)</div><div class="sr">10 repetições</div></div></div>
+<div class="ill"><img src="img/bracos.webp" alt="Mulher idosa sentada levantando os braços"></div>
+</div>
+<div class="step">
+<div class="srow"><div class="num">2</div><div><div class="st">Abertura e fechamento das mãos</div><div class="sr">10 repetições</div></div></div>
+<div class="ill"><img src="img/maos.webp" alt="Mão aberta e depois fechada"></div>
+</div>
+<div class="tip"><strong>Dica:</strong> mantenha as costas apoiadas na cadeira.</div>
+</div>
+
+<!-- Cartão 3: pernas e joelhos -->
+<div class="card">
+<div class="hdr">BLOCO 3 · MEMBROS INFERIORES</div>
+<div class="ttl">Pernas e joelhos</div>
+<div class="sub">Fortalece e melhora o equilíbrio</div>
+<div class="step">
+<div class="srow"><div class="num">1</div><div><div class="st">Extensão de joelho (sentado)</div><div class="sr">10 repetições em cada perna</div></div></div>
+<div class="ill ill-tall"><img src="img/joelho.webp" alt="Mulher idosa sentada estendendo a perna"></div>
+</div>
+<div class="step">
+<div class="srow"><div class="num">2</div><div><div class="st">Elevação de calcanhar</div><div class="sr">12 repetições</div></div></div>
+</div>
+<div class="tip"><strong>Dica:</strong> movimento lento e controlado.</div>
+</div>
+
+<!-- Cartão 4: equilíbrio -->
+<div class="card">
+<div class="hdr">BLOCO 4 · EQUILÍBRIO</div>
+<div class="ttl">Equilíbrio e postura</div>
+<div class="sub">Mais segurança no dia a dia</div>
+<div class="step">
+<div class="srow"><div class="num">1</div><div><div class="st">Apoio unipodal (com apoio)</div><div class="sr">Segure por 10 segundos em cada perna</div></div></div>
+<div class="ill ill-tall"><img src="img/equilibrio.webp" alt="Mulher idosa em pé apoiada em uma cadeira, levantando uma perna"></div>
+</div>
+<div class="step">
+<div class="srow"><div class="num">2</div><div><div class="st">Transferência de peso</div><div class="sr">10 repetições</div></div></div>
+</div>
+<div class="tip"><strong>Dica:</strong> mantenha o olhar à frente e respire normalmente.</div>
+</div>
+
+<!-- Cartão 5: alongamento -->
+<div class="card">
+<div class="hdr">BLOCO 5 · ALONGAMENTO</div>
+<div class="ttl">Alongamento geral</div>
+<div class="sub">Melhora a flexibilidade e reduz a rigidez</div>
+<div class="step">
+<div class="srow"><div class="num">1</div><div><div class="st">Alongamento de braços</div><div class="sr">20 segundos</div></div></div>
+<div class="ill"><img src="img/alongbracos.webp" alt="Mulher idosa alongando o braço à frente do peito"></div>
+</div>
+<div class="step">
+<div class="srow"><div class="num">2</div><div><div class="st">Alongamento de pernas (sentado)</div><div class="sr">20 segundos em cada perna</div></div></div>
+<div class="ill"><img src="img/alongpernas.webp" alt="Mulher idosa sentada alongando a perna"></div>
+</div>
+<div class="tip"><strong>Dica:</strong> respeite seus limites. O alongamento deve ser confortável, sem dor.</div>
+</div>
+
+<!-- Cartão 6: rotina semanal -->
+<div class="card">
+<div class="hdr">BLOCO 6 · ROTINA SEMANAL</div>
+<div class="ttl">Sugestão de plano</div>
+<div class="sub">Você pode adaptar conforme sua rotina</div>
+<div style="display: flex; flex-direction: column; gap: 3px; padding-top: 6px">
+<div class="row"><div class="day">Segunda</div><div class="what">Mobilidade + Braços</div></div>
+<div class="row"><div class="day dayalt">Terça</div><div class="what">Pernas + Equilíbrio</div></div>
+<div class="row"><div class="day">Quarta</div><div class="what">Alongamento + Postura</div></div>
+<div class="row"><div class="day dayalt">Quinta</div><div class="what">Mobilidade + Braços</div></div>
+<div class="row"><div class="day">Sexta</div><div class="what">Pernas + Equilíbrio</div></div>
+<div class="row"><div class="day dayalt">Sábado</div><div class="what">Alongamento geral</div></div>
+<div class="row"><div class="day" style="background: #8AA7A3">Domingo</div><div class="what">Descanso</div></div>
+</div>
+<div class="tip"><strong>Dica:</strong> comece devagar e aumente aos poucos.</div>
+</div>
+
+<!-- Cartão 7: dicas -->
+<div class="card">
+<div class="hdr">DICAS IMPORTANTES</div>
+<div class="ttl">Antes de começar</div>
+<div class="sub">Cuidados simples para se movimentar com segurança</div>
+<div style="padding-top: 8px">
+<div class="chk"><svg viewBox="0 0 24 24" fill="none" stroke="#0E6B66" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Faça os exercícios em um local seguro.</span></div>
+<div class="chk"><svg viewBox="0 0 24 24" fill="none" stroke="#0E6B66" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Use roupas confortáveis.</span></div>
+<div class="chk"><svg viewBox="0 0 24 24" fill="none" stroke="#0E6B66" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Se possível, tenha o apoio de uma cadeira ou parede.</span></div>
+<div class="chk"><svg viewBox="0 0 24 24" fill="none" stroke="#0E6B66" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Respeite seus limites e evite dores.</span></div>
+<div class="chk"><svg viewBox="0 0 24 24" fill="none" stroke="#0E6B66" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Mantenha uma boa hidratação.</span></div>
+<div class="chk"><svg viewBox="0 0 24 24" fill="none" stroke="#0E6B66" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Em caso de dúvida, procure um profissional de saúde.</span></div>
+</div>
+<div class="tip" style="text-align: center; font-weight: 700; font-size: 13px">Movimento é vida!</div>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<!-- Para quem é -->
+<div style="background: #FFFFFF; padding: 40px 20px">
+<div style="max-width: 1040px; margin: 0 auto; display: flex; flex-direction: column; gap: 22px">
+<h2 style="margin: 0; text-align: center; font-family: Lexend, system-ui, sans-serif; font-weight: 800; font-size: 26px; line-height: 1.2">Para quem é este <span style="color: #0E6B66">material</span></h2>
+<div style="display: flex; flex-wrap: wrap; gap: 12px">
+<div style="flex: 1 1 260px; border: 2px solid #DDEEEA; border-radius: 16px; padding: 16px 18px; display: flex; flex-direction: column; gap: 8px">
+<h3 style="margin: 0; font-family: Lexend, system-ui, sans-serif; font-weight: 700; font-size: 18px; color: #0E6B66">Idosos</h3>
+<p style="margin: 0; color: #4A625F">Para quem quer sair do sedentarismo com calma: movimentos simples, no seu ritmo, sem sair de casa.</p>
+</div>
+<div style="flex: 1 1 260px; border: 2px solid #DDEEEA; border-radius: 16px; padding: 16px 18px; display: flex; flex-direction: column; gap: 8px">
+<h3 style="margin: 0; font-family: Lexend, system-ui, sans-serif; font-weight: 700; font-size: 18px; color: #0E6B66">Famílias</h3>
+<p style="margin: 0; color: #4A625F">Para quem quer ajudar um pai, uma mãe ou um avô a se movimentar, com um passo a passo fácil de acompanhar.</p>
+</div>
+<div style="flex: 1 1 260px; border: 2px solid #DDEEEA; border-radius: 16px; padding: 16px 18px; display: flex; flex-direction: column; gap: 8px">
+<h3 style="margin: 0; font-family: Lexend, system-ui, sans-serif; font-weight: 700; font-size: 18px; color: #0E6B66">Cuidadores</h3>
+<p style="margin: 0; color: #4A625F">Atividades prontas para incluir na rotina do dia, sem improviso e com mais segurança para quem cuida.</p>
+</div>
+<div style="flex: 1 1 260px; border: 2px solid #DDEEEA; border-radius: 16px; padding: 16px 18px; display: flex; flex-direction: column; gap: 8px">
+<h3 style="margin: 0; font-family: Lexend, system-ui, sans-serif; font-weight: 700; font-size: 18px; color: #0E6B66">Personal trainers</h3>
+<p style="margin: 0; color: #4A625F">Variedade para planejar aulas e atendimentos de idosos sem gastar horas montando tudo do zero.</p>
+</div>
+<div style="flex: 1 1 260px; border: 2px solid #DDEEEA; border-radius: 16px; padding: 16px 18px; display: flex; flex-direction: column; gap: 8px">
+<h3 style="margin: 0; font-family: Lexend, system-ui, sans-serif; font-weight: 700; font-size: 18px; color: #0E6B66">Fisioterapeutas</h3>
+<p style="margin: 0; color: #4A625F">Exercícios organizados por bloco e com progressão, para apoiar o plano de atendimento de cada paciente.</p>
+</div>
+</div>
+</div>
+</div>
+
+<!-- Planos -->
+<div id="planos" style="background: #0B4A47; padding: 40px 20px">
+<div style="max-width: 1040px; margin: 0 auto; display: flex; flex-direction: column; gap: 22px">
+<div style="display: flex; flex-direction: column; gap: 12px; text-align: center">
+<h2 style="margin: 0; font-family: Lexend, system-ui, sans-serif; font-weight: 800; font-size: 26px; line-height: 1.2; color: #FFFFFF">Tudo isso por menos que um lanche</h2>
+<p style="margin: 0; color: #D4E9E5">Pagamento único. Acesso digital imediato após a confirmação.</p>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 16px; align-items: stretch; justify-content: center">
+
+<div style="flex: 1 1 380px; max-width: 500px; background: #FFFFFF; border-radius: 24px; padding: 22px; display: flex; flex-direction: column; gap: 14px">
+<div>
+<h3 style="margin: 0; font-family: Lexend, system-ui, sans-serif; font-weight: 800; font-size: 26px">Kit Essencial</h3>
+<p style="margin: 4px 0 0; color: #4A625F">O essencial para começar</p>
+</div>
+<div>
+<div style="color: #4A625F; font-size: 16px">de <span style="text-decoration: line-through">R$ 29,90</span> por</div>
+<div style="font-family: Lexend, system-ui, sans-serif; font-weight: 800; font-size: 40px; line-height: 1.1; color: #0E6B66">R$ 8,90</div>
+<div style="font-size: 14px; font-weight: 700; letter-spacing: 0.06em; color: #4A625F">PAGAMENTO ÚNICO · VITALÍCIO</div>
+</div>
+<div style="display: flex; flex-direction: column; gap: 8px">
+<div style="display: flex; gap: 12px; align-items: flex-start"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0E6B66" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: none; margin-top: 3px"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Blocos 1 a 3: mobilidade, braços e mãos, pernas e joelhos</span></div>
+<div style="display: flex; gap: 12px; align-items: flex-start"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0E6B66" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: none; margin-top: 3px"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Passo a passo ilustrado</span></div>
+<div style="display: flex; gap: 12px; align-items: flex-start"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0E6B66" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: none; margin-top: 3px"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Acesso digital, pronto para imprimir</span></div>
+</div>
+<div style="display: flex; flex-direction: column; gap: 10px; flex: 1; color: #4A625F">
+<div style="font-weight: 700; font-size: 15px; letter-spacing: 0.04em">NÃO INCLUI</div>
+<div style="display: flex; gap: 12px; align-items: flex-start"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#B8501A" stroke-width="2.4" stroke-linecap="round" aria-hidden="true" style="flex: none; margin-top: 4px"><path d="M6 6l12 12M18 6L6 18"/></svg><span>Equilíbrio e postura, alongamento geral e rotina semanal</span></div>
+<div style="display: flex; gap: 12px; align-items: flex-start"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#B8501A" stroke-width="2.4" stroke-linecap="round" aria-hidden="true" style="flex: none; margin-top: 4px"><path d="M6 6l12 12M18 6L6 18"/></svg><span>Exercícios de Memória e Coordenação</span></div>
+<div style="display: flex; gap: 12px; align-items: flex-start"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#B8501A" stroke-width="2.4" stroke-linecap="round" aria-hidden="true" style="flex: none; margin-top: 4px"><path d="M6 6l12 12M18 6L6 18"/></svg><span>Cognitivos e Brincadeiras Educativas</span></div>
+<div style="display: flex; gap: 12px; align-items: flex-start"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#B8501A" stroke-width="2.4" stroke-linecap="round" aria-hidden="true" style="flex: none; margin-top: 4px"><path d="M6 6l12 12M18 6L6 18"/></svg><span>Guia de Evolução</span></div>
+</div>
+<a href="#oferta-completo" style="display: flex; align-items: center; justify-content: center; min-height: 58px; border-radius: 14px; border: 2px solid #0E6B66; color: #0E6B66; font-family: Lexend, system-ui, sans-serif; font-weight: 700; font-size: 18px; text-decoration: none">ACESSAR AGORA</a>
+</div>
+
+<div style="flex: 1 1 380px; max-width: 500px; background: #FFFFFF; border-radius: 24px; padding: 22px; display: flex; flex-direction: column; gap: 14px; border: 4px solid #F2B84B">
+<div style="display: flex; flex-direction: column; gap: 10px">
+<div style="align-self: flex-start; background: #F2B84B; color: #17302E; font-weight: 700; font-size: 14px; padding: 6px 14px; border-radius: 999px; letter-spacing: 0.04em">MAIS ESCOLHIDO</div>
+<div>
+<h3 style="margin: 0; font-family: Lexend, system-ui, sans-serif; font-weight: 800; font-size: 26px">Kit Completo</h3>
+<p style="margin: 4px 0 0; color: #4A625F">Acesso total + bônus exclusivos</p>
+</div>
+</div>
+<div>
+<div style="display: inline-block; background: #17302E; color: #FFFFFF; font-weight: 700; font-size: 13px; padding: 4px 10px; border-radius: 8px; letter-spacing: 0.04em">72% OFF</div>
+<div style="color: #4A625F; font-size: 16px; margin-top: 4px">de <span style="text-decoration: line-through">R$ 67,00</span> por</div>
+<div style="font-family: Lexend, system-ui, sans-serif; font-weight: 800; font-size: 40px; line-height: 1.1; color: #0E6B66">R$ 18,90</div>
+<div style="font-size: 14px; font-weight: 700; letter-spacing: 0.06em; color: #4A625F">PAGAMENTO ÚNICO · ACESSO VITALÍCIO</div>
+</div>
+<div style="display: flex; flex-direction: column; gap: 8px">
+<div style="display: flex; gap: 12px; align-items: flex-start"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0E6B66" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: none; margin-top: 3px"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Os 6 blocos completos de exercícios</span></div>
+<div style="display: flex; gap: 12px; align-items: flex-start"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0E6B66" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: none; margin-top: 3px"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Equilíbrio e postura, alongamento geral e rotina semanal</span></div>
+<div style="display: flex; gap: 12px; align-items: flex-start"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0E6B66" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: none; margin-top: 3px"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Acesso pelo celular ou computador, pronto para imprimir</span></div>
+<div style="display: flex; gap: 12px; align-items: flex-start"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0E6B66" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: none; margin-top: 3px"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Garantia de 7 dias</span></div>
+</div>
+<div style="background: #FFF6E0; border-radius: 14px; padding: 16px 18px; display: flex; flex-direction: column; gap: 8px; flex: 1">
+<div style="font-weight: 700; font-size: 15px; letter-spacing: 0.04em">BÔNUS INCLUSOS</div>
+<div style="display: flex; gap: 12px; align-items: flex-start"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#B8501A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: none; margin-top: 4px"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Exercícios de Memória e Coordenação</span></div>
+<div style="display: flex; gap: 12px; align-items: flex-start"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#B8501A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: none; margin-top: 4px"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Exercícios Cognitivos e Brincadeiras Educativas</span></div>
+<div style="display: flex; gap: 12px; align-items: flex-start"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#B8501A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: none; margin-top: 4px"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Guia de Evolução</span></div>
+</div>
+<a href="#" style="display: flex; align-items: center; justify-content: center; min-height: 58px; border-radius: 14px; background: #B8501A; color: #FFFFFF; font-family: Lexend, system-ui, sans-serif; font-weight: 700; font-size: 18px; text-decoration: none">QUERO O KIT COMPLETO</a>
+</div>
+</div>
+</div>
+</div>
+
+<!-- Depoimentos -->
+
+<div style="padding: 40px 20px">
+<div style="max-width: 1040px; margin: 0 auto; display: flex; flex-direction: column; gap: 22px">
+<h2 style="margin: 0; text-align: center; font-family: Lexend, system-ui, sans-serif; font-weight: 800; font-size: 26px; line-height: 1.2">O que dizem as <span style="color: #0E6B66">famílias e profissionais</span></h2>
+<div style="overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: 12px">
+<div style="display: flex; gap: 20px; width: max-content; margin: 0 auto">
+<div style="flex: 0 0 280px; scroll-snap-align: center; border: 6px solid #17302E; border-radius: 32px; background: #FFFFFF; overflow: hidden; display: flex; flex-direction: column">
+<div><div style="background: #17302E; color: #FFFFFF; text-align: center; font-size: 12px; font-weight: 700; letter-spacing: 0.04em; padding: 6px 10px">CONVERSA EXEMPLO</div><img src="img/dep1.png" alt="Exemplo ilustrativo de conversa" style="display: block; width: 100%; height: auto"></div>
+</div>
+<div style="flex: 0 0 280px; scroll-snap-align: center; border: 6px solid #17302E; border-radius: 32px; background: #FFFFFF; overflow: hidden; display: flex; flex-direction: column">
+<div><div style="background: #17302E; color: #FFFFFF; text-align: center; font-size: 12px; font-weight: 700; letter-spacing: 0.04em; padding: 6px 10px">CONVERSA EXEMPLO</div><img src="img/dep2.png" alt="Exemplo ilustrativo de conversa" style="display: block; width: 100%; height: auto"></div>
+</div>
+<div style="flex: 0 0 280px; scroll-snap-align: center; border: 6px solid #17302E; border-radius: 32px; background: #FFFFFF; overflow: hidden; display: flex; flex-direction: column">
+<div><div style="background: #17302E; color: #FFFFFF; text-align: center; font-size: 12px; font-weight: 700; letter-spacing: 0.04em; padding: 6px 10px">CONVERSA EXEMPLO</div><img src="img/dep3.png" alt="Exemplo ilustrativo de conversa" style="display: block; width: 100%; height: auto"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+<!-- Garantia -->
+<div style="background: #FFFFFF; padding: 40px 20px">
+<div style="max-width: 860px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 20px; align-items: center; justify-content: center">
+<div style="flex: none; width: 104px; height: 104px; border-radius: 50%; border: 6px solid #F2B84B; background: #0B4A47; color: #FFFFFF; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; font-family: Lexend, system-ui, sans-serif">
+<div style="font-weight: 800; font-size: 36px; line-height: 1">7</div>
+<div style="font-weight: 700; font-size: 13px; letter-spacing: 0.06em">DIAS</div>
+</div>
+<div style="flex: 1 1 340px; display: flex; flex-direction: column; gap: 16px">
+<h2 style="margin: 0; font-family: Lexend, system-ui, sans-serif; font-weight: 800; font-size: 24px; line-height: 1.2">Teste sem risco por 7 dias</h2>
+<p style="margin: 0; color: #4A625F">Use o material por 7 dias. Se não for o que você esperava, devolvemos 100% do valor. Basta enviar uma mensagem.</p>
+<a href="#planos" style="display: inline-flex; align-items: center; justify-content: center; min-height: 58px; padding: 0 32px; border-radius: 14px; background: #B8501A; color: #FFFFFF; font-family: Lexend, system-ui, sans-serif; font-weight: 700; font-size: 18px; text-decoration: none; align-self: flex-start">QUERO O KIT COMPLETO</a>
+</div>
+</div>
+</div>
+
+<!-- FAQ -->
+<div style="padding: 40px 20px">
+<div style="max-width: 860px; margin: 0 auto; display: flex; flex-direction: column; gap: 20px">
+<h2 style="margin: 0; text-align: center; font-family: Lexend, system-ui, sans-serif; font-weight: 800; font-size: 26px; line-height: 1.2">Perguntas <span style="color: #0E6B66">frequentes</span></h2>
+<div style="display: flex; flex-direction: column; gap: 10px">
+<details style="background: #FFFFFF; border-radius: 14px; padding: 14px 18px"><summary style="cursor: pointer; font-family: Lexend, system-ui, sans-serif; font-weight: 700; font-size: 16px; line-height: 1.3">Como recebo o material?</summary><p style="margin: 8px 0 0; color: #4A625F">Depois da confirmação do pagamento, o acesso é liberado de forma digital e imediata por e-mail.</p></details>
+<details style="background: #FFFFFF; border-radius: 14px; padding: 14px 18px"><summary style="cursor: pointer; font-family: Lexend, system-ui, sans-serif; font-weight: 700; font-size: 16px; line-height: 1.3">Funciona no celular? Posso imprimir?</summary><p style="margin: 8px 0 0; color: #4A625F">Sim. O material é digital, abre no celular, no tablet ou no computador e pode ser impresso.</p></details>
+<details style="background: #FFFFFF; border-radius: 14px; padding: 14px 18px"><summary style="cursor: pointer; font-family: Lexend, system-ui, sans-serif; font-weight: 700; font-size: 16px; line-height: 1.3">Serve para quem tem pouca mobilidade?</summary><p style="margin: 8px 0 0; color: #4A625F">Os exercícios são pensados para fazer sentado ou com apoio. Mesmo assim, converse com o médico ou o fisioterapeuta antes de começar.</p></details>
+<details style="background: #FFFFFF; border-radius: 14px; padding: 14px 18px"><summary style="cursor: pointer; font-family: Lexend, system-ui, sans-serif; font-weight: 700; font-size: 16px; line-height: 1.3">Preciso de equipamentos?</summary><p style="margin: 8px 0 0; color: #4A625F">Não. A maior parte das atividades usa só uma cadeira firme e o peso do próprio corpo.</p></details>
+<details style="background: #FFFFFF; border-radius: 14px; padding: 14px 18px"><summary style="cursor: pointer; font-family: Lexend, system-ui, sans-serif; font-weight: 700; font-size: 16px; line-height: 1.3">Serve para atendimento individual e em grupo?</summary><p style="margin: 8px 0 0; color: #4A625F">Sim. As rotinas servem para uso individual, em família ou em turmas, por cuidadores e profissionais.</p></details>
+<details style="background: #FFFFFF; border-radius: 14px; padding: 14px 18px"><summary style="cursor: pointer; font-family: Lexend, system-ui, sans-serif; font-weight: 700; font-size: 16px; line-height: 1.3">Por quanto tempo tenho acesso?</summary><p style="margin: 8px 0 0; color: #4A625F">O pagamento é único e o acesso é vitalício.</p></details>
+</div>
+</div>
+</div>
+
+<!-- Oferta ao clicar em Acessar agora (Kit Essencial) -->
+<div id="oferta-completo" class="upsell" role="dialog" aria-label="Oferta especial">
+<div style="position: relative; width: 100%; max-width: 440px; background: #FFFFFF; border-radius: 24px; border: 4px solid #F2B84B; padding: 28px 22px 22px; display: flex; flex-direction: column; gap: 14px; text-align: center; color: #17302E">
+<a href="#planos" aria-label="Fechar" style="position: absolute; top: 10px; right: 14px; font-size: 28px; line-height: 1; color: #4A625F; text-decoration: none">&times;</a>
+<div style="align-self: center; background: #F2B84B; color: #17302E; font-weight: 700; font-size: 13px; padding: 5px 14px; border-radius: 999px; letter-spacing: 0.04em">OFERTA ESPECIAL</div>
+<div style="font-family: Lexend, system-ui, sans-serif; font-weight: 800; font-size: 24px; line-height: 1.2">Espere! Leve o Kit Completo com desconto</div>
+<div>
+<div style="color: #4A625F; font-size: 16px">de <span style="text-decoration: line-through">R$ 18,90</span> por apenas</div>
+<div style="font-family: Lexend, system-ui, sans-serif; font-weight: 800; font-size: 44px; line-height: 1.1; color: #0E6B66">R$ 14,90</div>
+<div style="font-size: 13px; font-weight: 700; letter-spacing: 0.06em; color: #4A625F">PAGAMENTO ÚNICO · ACESSO VITALÍCIO</div>
+</div>
+<div style="background: #F5F9F7; border-radius: 14px; padding: 12px 16px; text-align: left; font-size: 15px; display: flex; flex-direction: column; gap: 4px">
+<div>✅ Os 6 blocos completos de exercícios</div>
+<div>✅ Bônus: Memória e Coordenação</div>
+<div>✅ Bônus: Cognitivos e Brincadeiras Educativas</div>
+<div>✅ Bônus: Guia de Evolução</div>
+</div>
+<a href="#" style="display: flex; align-items: center; justify-content: center; min-height: 56px; border-radius: 14px; background: #B8501A; color: #FFFFFF; font-family: Lexend, system-ui, sans-serif; font-weight: 700; font-size: 17px; text-decoration: none; padding: 0 12px; text-align: center">SIM, QUERO O COMPLETO POR R$ 14,90</a>
+<a href="#" style="color: #4A625F; font-size: 14px; text-decoration: underline">Não, quero só o Essencial por R$ 8,90</a>
+</div>
+</div>
+
+<!-- Rodapé -->
+<div style="background: #0B4A47; color: #D4E9E5; padding: 28px 20px; text-align: center">
+<div style="max-width: 760px; margin: 0 auto; display: flex; flex-direction: column; gap: 12px; font-size: 15px">
+<div style="font-family: Lexend, system-ui, sans-serif; font-weight: 800; font-size: 20px; color: #FFFFFF">Autonomia Ativa</div>
+<div>© 2026 Autonomia Ativa. Todos os direitos reservados.</div>
+<div>Material de uso pessoal e profissional. Este conteúdo não substitui a orientação de médico, fisioterapeuta ou outro profissional de saúde. Consulte um profissional antes de iniciar qualquer atividade física.</div>
+</div>
+</div>
+
+</div>
+
+<script>
+var START=Date.now();
+try{var sv=Number(sessionStorage.getItem('oferta_inicio'));if(sv){START=sv}else{sessionStorage.setItem('oferta_inicio',String(START))}}catch(e){}
+function p(n){return String(n).padStart(2,'0')}
+function tick(){var t=Math.max(0,15*60-Math.floor((Date.now()-START)/1000));
+document.getElementById('mm').textContent=p(Math.floor(t/60));
+document.getElementById('ss').textContent=p(t%60);}
+tick();setInterval(tick,1000);
+</script>
+</body>
+</html>
