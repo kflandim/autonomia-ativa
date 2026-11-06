@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8"><meta name="robots" content="noindex,nofollow"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Plano de Movimento por Perfil · Autonomia Ativa</title>
+<style>
+:root{--b:#0B4DA2;--g:#148C46;--y:#FFD60A;--ink:#14253d;--soft:#EAF2FB}
+*{box-sizing:border-box}body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,sans-serif;color:var(--ink);background:#f4f8fc;font-size:19px;line-height:1.5}
+.app{max-width:680px;margin:0 auto;padding:0 18px 60px}
+header{background:var(--b);color:#fff;margin:0 -18px;padding:18px 18px 22px}header .brand{font-weight:800;letter-spacing:.03em}header .brand span{color:var(--y)}
+h1{font-size:27px;line-height:1.2;margin:10px 0 4px}h2{font-size:23px;color:var(--b);margin:24px 0 8px}h3{font-size:19px;color:var(--b);margin:14px 0 4px}
+.card{background:#fff;border-radius:16px;padding:20px;margin-top:16px;box-shadow:0 2px 10px rgba(11,77,162,.08)}
+.btn{display:block;width:100%;border:0;border-radius:14px;padding:17px 14px;font-size:19px;font-weight:700;cursor:pointer;background:var(--g);color:#fff;margin-top:14px;text-align:center;text-decoration:none}
+.btn.sec{background:#fff;color:var(--b);border:2px solid var(--b)}
+.opt{display:flex;gap:12px;align-items:flex-start;border:2px solid #c9d8ea;border-radius:14px;padding:14px;margin-top:10px;cursor:pointer;background:#fff}
+.opt input{width:24px;height:24px;margin-top:3px;accent-color:var(--b);flex:none}.opt.sel{border-color:var(--b);background:var(--soft)}
+.prog{height:8px;background:#d7e4f3;border-radius:8px;margin-top:14px}.prog i{display:block;height:100%;background:var(--y);border-radius:8px}
+.note{background:#FFF6D6;border-left:5px solid #E0A800;border-radius:8px;padding:12px 14px;font-size:16.5px;margin-top:14px}
+.ok{background:#E7F6EC;border-left:5px solid var(--g);border-radius:8px;padding:12px 14px;font-size:16.5px;margin-top:14px}
+.small{font-size:14.5px;color:#4a5b72}.hide{display:none}
+#doc{display:none}
+/* ---------- documento imprimível ---------- */
+.pg{width:210mm;min-height:297mm;background:#fff;margin:14px auto;padding:15mm 16mm 18mm;position:relative;box-shadow:0 2px 12px rgba(0,0,0,.12);font-size:12.5pt;line-height:1.42}
+.pg .band{background:var(--b);color:#fff;margin:-15mm -16mm 7mm;padding:10mm 16mm 7mm}.pg .band .k{font-size:9.5pt;letter-spacing:.14em;text-transform:uppercase;opacity:.85;font-weight:600}.pg .band h1{font-size:23pt;margin:1.5mm 0 0}
+.pg h2{font-size:15pt;margin:5mm 0 2mm}.pg h3{font-size:12.5pt}
+.pg table{border-collapse:collapse;width:100%;font-size:11pt}.pg th,.pg td{border:1px solid #c5d3e4;padding:2.2mm 2.6mm;text-align:left;vertical-align:top}.pg th{background:var(--soft);color:var(--b)}
+.pg .box{border-left:2mm solid var(--b);background:var(--soft);border-radius:2.5mm;padding:3.5mm 4.5mm;margin:4mm 0}.pg .box.w{background:#FFF6D6;border-color:#E0A800}.pg .box.g{background:#E7F6EC;border-color:var(--g)}
+.pg .box b.t{display:block;font-size:10pt;letter-spacing:.06em;text-transform:uppercase;color:var(--b);margin-bottom:1mm}.pg .box.w b.t{color:#8a6500}.pg .box.g b.t{color:var(--g)}
+.pg ul{padding-left:5mm;margin:0 0 3mm}.pg li{margin-bottom:1.4mm}
+.pg ul.ck{list-style:none;padding-left:0}.pg ul.ck li{position:relative;padding-left:8mm;margin-bottom:2.4mm}.pg ul.ck li:before{content:"";position:absolute;left:0;top:.6mm;width:5mm;height:5mm;border:.5mm solid var(--b);border-radius:1mm}
+.pg .foot{position:absolute;left:16mm;right:16mm;bottom:6mm;font-size:8.5pt;color:#5b6b80;border-top:1px solid #dbe5f1;padding-top:1.5mm;display:flex;justify-content:space-between}
+.tight th,.tight td{padding:1.1mm 2mm!important;font-size:9.5pt!important}.sq{display:inline-block;width:4.6mm;height:4.6mm;border:.5mm solid var(--b);border-radius:1mm;vertical-align:-1mm}
+.cover{background:linear-gradient(160deg,#0B4DA2,#073672);color:#fff}.cover h1{font-size:34pt;line-height:1.05}
+@page{size:A4;margin:0}
+@media print{body{background:#fff}.app{max-width:none;padding:0;margin:0}#doc{width:210mm;margin:0}.app>header,.app>section,#screen{display:none!important}#doc{display:block!important}.pg{margin:0;box-shadow:none;page-break-after:always;width:210mm;height:297mm;overflow:hidden}*{-webkit-print-color-adjust:exact;print-color-adjust:exact}}
+</style></head><body>
+<div class="app">
+<header><div class="brand">AUTONOMIA <span>ATIVA</span></div><h1>Plano de Movimento por Perfil</h1><div>4 semanas · material educativo</div></header>
+<section id="screen"></section>
+<div id="doc"></div>
+</div>
+<script>
+// ====================== DADOS ======================
+const BL=[
+ {n:1,t:"Mobilidade: pescoço e ombros",ex:[["Inclinar a cabeça para o lado","5 vezes para cada lado"],["Olhar para os lados","6 vezes para cada lado"],["Queixo ao peito","8 vezes"],["Círculos com os ombros","8 para trás e 8 para a frente"],["Mãos nos ombros","8 vezes"],["Abrir e fechar os braços","10 vezes"]]},
+ {n:2,t:"Braços e mãos",ex:[["Dobrar e esticar os cotovelos","10 vezes"],["Levantar os braços à frente","8 vezes"],["Abrir os braços para os lados","8 vezes"],["Empurrar o ar","10 vezes"],["Girar os punhos","10 giros para cada lado"],["Tocar o ombro oposto","8 vezes para cada lado"]]},
+ {n:3,t:"Pernas e joelhos",ex:[["Esticar o joelho","8 vezes para cada perna"],["Marcha sentada","20 passos no total"],["Abrir e fechar as pernas","10 vezes"],["Subir nas pontas dos pés","12 vezes"],["Levantar as pontas dos pés","10 vezes para cada pé"],["Sentar e levantar da cadeira","5 a 8 vezes, com apoio firme ou cuidador"]]}
+];
+const PERFIS={
+ A:{nome:"Movimentos sentados",desc:"Roteiro de organização para quem recebeu orientação para atividades sentadas e consegue permanecer sentado(a) com conforto e estabilidade."},
+ B:{nome:"Rotina com apoio de cuidador",desc:"Roteiro para organizar, com a participação de um familiar ou cuidador, atividades que o profissional já autorizou."},
+ C:{nome:"Organização por regiões do corpo",desc:"Roteiro para consultar os exercícios do Kit por tema (região do corpo), respeitando as orientações e restrições que o profissional deu."},
+ D:{nome:"Necessidade de avaliação profissional",desc:"Pelas respostas, o mais prudente é conversar com um profissional de saúde antes de qualquer atividade. Não entregamos uma rotina de exercícios agora."}
+};
+const Q=[
+ {id:"q1",t:"Qual a faixa etária da pessoa que utilizará o material?",o:[["a","Até 59 anos"],["b","60 a 69 anos"],["c","70 a 79 anos"],["d","80 anos ou mais"]]},
+ {id:"q2",t:"Ela consegue fazer atividades sentada, de maneira confortável e estável?",o:[["sim","Sim, com conforto e estabilidade"],["apoio","Às vezes precisa de apoio ou de alguém por perto"],["nao","Não consegue ficar sentada com conforto e estabilidade"]]},
+ {id:"q3",t:"Como ela costuma se locomover dentro de casa?",o:[["sozinha","Sozinha, sem apoio"],["apoio","Com bengala, andador ou apoiando-se nos móveis"],["ajuda","Com ajuda de outra pessoa"],["sentada","Passa a maior parte do tempo sentada ou deitada"]]},
+ {id:"q4",t:"Ela precisa de ajuda de outra pessoa nas atividades do dia a dia?",o:[["nao","Não"],["algumas","Em algumas atividades"],["maioria","Na maioria das atividades"]]},
+ {id:"q5",t:"Qual parte do material mais desperta interesse?",o:[["bracos","Braços e mãos"],["pernas","Pernas e joelhos"],["gerais","Movimentos gerais (todos os blocos)"]]},
+ {id:"q6",t:"Qual é o principal objetivo de organização da rotina?",o:[["horario","Criar um horário fixo na rotina"],["tema","Consultar o material por tema (região do corpo)"],["familiar","Acompanhar junto com um familiar ou cuidador"],["duvidas","Reunir dúvidas para levar a um profissional"]]},
+ {id:"q7",t:"Existe orientação ou restrição de movimento dada por um profissional de saúde?",o:[["liberou","Sim, o profissional liberou atividades sentadas, sem restrições específicas"],["restr","Sim, liberou com restrições, e eu sei quais são"],["naoentendi","Há orientação ou restrição, mas não entendi bem"],["nenhuma","Ainda não conversei com um profissional sobre atividades"]]},
+ {id:"q8",t:"Há sintoma atual, queda recente ou condição que indique necessidade de avaliação antes de começar?",o:[["nao","Não"],["sim","Sim"],["nsei","Não sei"]]}
+];
+// ====================== LÓGICA DE SELEÇÃO (sem diagnóstico) ======================
+function selecionar(a){
+  const motivos=[];
+  if(a.q8!=="nao") motivos.push("Foi informado sintoma, queda recente, condição de alerta ou dúvida sobre isso.");
+  if(a.q7==="naoentendi") motivos.push("Há orientação ou restrição ainda não esclarecida com o profissional.");
+  if(a.q7==="nenhuma") motivos.push("Ainda não houve conversa com um profissional sobre atividades.");
+  if(a.q2==="nao") motivos.push("Foi informada dificuldade para permanecer sentada com conforto e estabilidade.");
+  if(a.q3==="sentada") motivos.push("Foi relatada permanência na maior parte do tempo sentada ou deitada; confirme a proposta com profissional de saúde.");
+  if(motivos.length) return {p:"D",motivos};
+  if(a.q4!=="nao"||a.q3==="ajuda"||a.q3==="apoio"||a.q2==="apoio"||a.q6==="familiar") return {p:"B",motivos:[]};
+  if(a.q6==="tema"||a.q7==="restr") return {p:"C",motivos:[]};
+  return {p:"A",motivos:[]};
+}
+// ====================== TELAS ======================
+const S=document.getElementById('screen'),D=document.getElementById('doc');
+let ans={},step=-1,consent=false,nome="";
+function esc(s){return String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]))}
+function intro(){
+  S.innerHTML=`<div class="card"><h2 style="margin-top:0">Vamos montar o seu roteiro de organização</h2>
+  <p>São <b>8 perguntas rápidas</b> com respostas prontas. Em seguida, você recebe um roteiro educativo de 4 semanas, escolhido entre <b>4 modelos preparados antes</b>, para imprimir ou salvar em PDF.</p>
+  <div class="note"><b>Importante:</b> este material é <b>educativo</b>. Ele não faz diagnóstico, avaliação clínica ou prescrição de exercício individual, e não substitui médico ou fisioterapeuta. Usa apenas os exercícios do Kit Essencial, com as instruções originais.</div>
+  <h3>Privacidade (LGPD)</h3>
+  <p class="small">Coletamos só o necessário: as 8 respostas abaixo. Neste modelo, elas ficam <b>apenas no seu aparelho</b>, enquanto a página está aberta, e não são enviadas nem guardadas. Não pedimos diagnósticos, nomes de doenças nem exames. Se preferir, deixe o nome em branco.</p>
+  <label class="opt" id="cons"><input type="checkbox" id="chk"><span>Li o aviso e concordo em responder às perguntas.</span></label>
+  <button class="btn" id="go" disabled style="opacity:.5">Começar</button></div>`;
+  const c=document.getElementById('chk'),g=document.getElementById('go');
+  c.onchange=()=>{consent=c.checked;g.disabled=!consent;g.style.opacity=consent?1:.5;document.getElementById('cons').classList.toggle('sel',consent)};
+  g.onclick=()=>{step=0;pergunta()};
+}
+function pergunta(){
+  const q=Q[step];
+  S.innerHTML=`<div class="card"><div class="small">Pergunta ${step+1} de ${Q.length}</div><div class="prog"><i style="width:${(step)/Q.length*100}%"></i></div>
+  <h2>${q.t}</h2>${q.o.map(([v,t])=>`<label class="opt ${ans[q.id]===v?'sel':''}"><input type="radio" name="o" value="${v}" ${ans[q.id]===v?'checked':''}><span>${t}</span></label>`).join('')}
+  <button class="btn" id="nx" ${ans[q.id]?'':'disabled style="opacity:.5"'}>${step==Q.length-1?'Ver resultado':'Próxima'}</button>
+  ${step>0?'<button class="btn sec" id="bk">Voltar</button>':''}</div>`;
+  S.querySelectorAll('input[name=o]').forEach(i=>i.onchange=()=>{ans[q.id]=i.value;pergunta()});
+  document.getElementById('nx').onclick=()=>{if(!ans[q.id])return;step++;step>=Q.length?resultado():pergunta()};
+  const b=document.getElementById('bk');if(b)b.onclick=()=>{step--;pergunta()};
+}
+function resultado(){
+  const r=selecionar(ans);const P=PERFIS[r.p];
+  const d=r.p==="D";
+  S.innerHTML=`<div class="card"><div class="small">Resultado</div><h2 style="margin-top:2px">Perfil ${r.p} · ${P.nome}</h2><p>${P.desc}</p>
+  ${d?`<div class="note"><b>Por que não entregamos uma rotina agora:</b><ul>${r.motivos.map(m=>`<li>${m}</li>`).join('')}</ul>Isso <b>não é um diagnóstico</b>. É um cuidado: converse com um profissional de saúde e, depois, preencha o formulário novamente.</div>`:`<div class="ok">Este perfil organiza a rotina com base nas <b>respostas gerais</b> e <b>não classifica aptidão física</b>. Antes de começar, confirme as liberações com o profissional que acompanha a pessoa.</div>`}
+  <label class="small" style="display:block;margin-top:14px">Nome para o PDF (opcional, não é enviado)<br><input id="nm" style="width:100%;padding:12px;border:2px solid #c9d8ea;border-radius:10px;font-size:18px" placeholder="Ex.: Dona Maria" value="${esc(nome)}"></label>
+  <button class="btn" id="pdf">${d?'Ver orientações e imprimir (PDF)':'Gerar meu roteiro e imprimir (PDF)'}</button>
+  <button class="btn sec" id="re">Refazer o formulário</button>
+  <p class="small">Dica: na tela de impressão, escolha <b>Salvar como PDF</b>.</p></div>`;
+  document.getElementById('nm').oninput=e=>nome=e.target.value;
+  document.getElementById('pdf').onclick=()=>{montarDoc(r.p,nome);setTimeout(()=>window.print(),250)};
+  document.getElementById('re').onclick=()=>{ans={};step=0;pergunta()};
+}
+// ====================== DOCUMENTO IMPRIMÍVEL ======================
+const FOOT=n=>`<div class="foot"><span>Autonomia Ativa · Material educativo · sem prescrição individual</span><span>${n}</span></div>`;
+const band=(k,t)=>`<div class="band"><div class="k">${k}</div><h1>${t}</h1></div>`;
+const box=(t,b,c='')=>`<div class="box ${c}"><b class="t">${t}</b>${b}</div>`;
+const ck=a=>'<ul class="ck">'+a.map(x=>`<li>${x}</li>`).join('')+'</ul>';
+const AV=box("Antes de começar","<p>Este roteiro é <b>educativo</b>. Não é diagnóstico, avaliação clínica ou prescrição individual. Use <b>somente</b> os exercícios do Kit Essencial, com as instruções originais, e <b>apenas se o profissional que acompanha a pessoa liberou</b>. Pare diante de dor, tontura, falta de ar ou desconforto. Em sinais graves, ligue <b>192</b>.</p>","w");
+const DIAS=["Segunda","Terça","Quarta","Quinta","Sexta","Sábado","Domingo"];
+const BLD=[1,2,3,1,2,3,0];
+function semana(w,p){
+  const tit={1:["Semana 1","Conhecendo o material e organizando o ambiente"],2:["Semana 2","Familiarização com as atividades previamente autorizadas"],3:["Semana 3","Organização e registro das atividades"],4:["Semana 4","Revisão da rotina e dúvidas para o profissional"]}[w];
+  let corpo="";
+  if(w===1){
+    corpo=`<h2>O que fazer nesta semana</h2>`+ck(["Ler a página <b>Antes de começar</b> do Kit Essencial, junto com a pessoa","Confirmar com o profissional quais atividades foram liberadas (anote na página do diário)","Escolher uma <b>cadeira firme, sem rodinhas e sem braços</b>, encostada na parede","Separar calçado fechado e antiderrapante, água por perto e um local sem tapetes soltos","Combinar com a pessoa um <b>horário confortável</b> do dia","Folhear os três blocos do Kit, só olhando as ilustrações (sem praticar ainda)"])+box("Esta semana não tem prática","<p>A prática começa na Semana 2, somente com o que o profissional liberou.</p>","g");
+  }else{
+    corpo=`<p>Marque cada dia em que o bloco foi feito <b>com as repetições originais do Kit</b>, sem aumentar. Se não for dia bom, descanse: está tudo bem.</p>
+    <table><tr><th>Dia</th><th>Bloco (sugestão do Kit)</th><th>Feito</th><th>Como me senti (0 a 10)</th></tr>${DIAS.map((d,i)=>`<tr><td>${d}</td><td>${BLD[i]?`Bloco ${BLD[i]} · ${BL[BLD[i]-1].t}`:"Descanso (ou caminhada leve, só se o médico liberar)"}</td><td>${BLD[i]?'<span class="sq"></span>':''}</td><td></td></tr>`).join('')}</table>`;
+    if(w===2) corpo+=box("Foco da semana","<p>Familiarize-se com cada exercício <b>apenas se estiver liberado</b>. O exercício <b>Sentar e levantar da cadeira</b> (Bloco 3) só deve ser feito se o profissional liberou especificamente.</p>");
+    if(w===3) corpo+=box("Foco da semana","<p>Anote no <b>Diário de acompanhamento</b> como foi cada dia, o que foi mais fácil e o que incomodou. Use também o registro da semana do Kit.</p>");
+    if(w===4) corpo+=`<h2>Perguntas para levar ao profissional</h2>`+'<div class="lines">'+'<div style="border-bottom:1px solid #b9c7d9;height:9mm"></div>'.repeat(4)+'</div>'+box("Revisão","<p>Converse sobre o que foi observado. <b>Não aumente</b> repetições, tempo ou intensidade por conta própria: quem orienta é o profissional.</p>","w");
+  }
+  if(p==="B") corpo+=box("Para o familiar ou cuidador","<p>Fique por perto, incentive e observe conforto. Não corrija movimentos com força e não faça a pessoa continuar se ela quiser parar.</p>");
+  return corpo;
+}
+const pg=(inner,n,cls="")=>`<div class="pg ${cls}">${inner}${FOOT(n)}</div>`;
+function montarDoc(p,nm){
+  const P=PERFIS[p];let n=0,h="";
+  const hoje=new Date().toLocaleDateString('pt-BR');
+  h+=`<div class="pg cover" style="padding:18mm 20mm"><div style="font-weight:800;font-size:15pt">AUTONOMIA <span style="color:#FFD60A">ATIVA</span></div><div style="margin-top:36mm"><div style="display:inline-block;background:#FFD60A;color:#14253d;font-weight:800;font-size:10pt;padding:1.5mm 4mm;border-radius:20mm;letter-spacing:.08em">PERFIL ${p}</div><h1 style="margin-top:6mm">${P.nome}</h1><p style="font-size:15pt;max-width:140mm">${p==="D"?"Orientações gerais e preparação para conversar com um profissional.":"Plano de Movimento por Perfil · roteiro educativo de 4 semanas"}</p></div><div style="position:absolute;left:20mm;right:20mm;bottom:14mm;font-size:10pt;opacity:.9">Material educativo. Não faz diagnóstico, avaliação clínica ou prescrição de exercício individual.</div></div>`;
+  if(p==="D"){
+    h+=pg(band("Perfil D","O que fazer agora")+`<p>Pelas respostas, o mais prudente é <b>conversar com um profissional de saúde antes de qualquer atividade</b>. Isso não é um diagnóstico: é um cuidado.</p>`+box("Quem procurar","<ul><li><b>Médico</b> (clínico ou geriatra): avaliação geral e liberação</li><li><b>Fisioterapeuta</b>: orientação sobre mobilidade e movimento</li><li><b>Terapeuta ocupacional</b>: rotina e adaptações</li></ul>")+box("Leve para a consulta","<ul><li>O Kit Essencial, para o profissional dizer o que pode ou não ser feito</li><li>Anotações do dia a dia: o que foi difícil, quando e quanto tempo</li><li>Dúvidas escritas</li></ul>")+box("Emergência","<p>Dor no peito, falta de ar intensa, desmaio, fala enrolada, fraqueza súbita de um lado do corpo ou confusão repentina: <b>ligue 192 (SAMU)</b>.</p>","w"),++n);
+    h+=pg(band("Perfil D","Orientações gerais, sem exercícios")+`<h2>Enquanto isso, você pode</h2>`+ck(["Ler a página <b>Antes de começar</b> do Kit Essencial","Organizar o ambiente: passagens livres, luz suficiente, tapetes fixos ou retirados","Conversar com a pessoa sobre o que ela gostaria de continuar fazendo","Anotar dúvidas e observações no diário","Combinar com a família quem vai acompanhar a consulta"])+`<h2>Perguntas para o profissional</h2><ul><li>Quais atividades posso fazer sentado(a) e quais devo evitar?</li><li>Há alguma restrição de movimento?</li><li>O Kit Essencial pode ser usado? Quais exercícios?</li><li>Com que frequência e com que cuidados?</li></ul><div class="lines">`+'<div style="border-bottom:1px solid #b9c7d9;height:9mm"></div>'.repeat(5)+`</div>`+box("Depois da avaliação","<p>Quando o profissional orientar, <b>preencha o formulário novamente</b>. Se houver liberação, você receberá um roteiro adequado ao seu perfil.</p>","g"),++n);
+    D.innerHTML=h;return;
+  }
+  h+=pg(band("Perfil "+p,P.nome)+`<p>${P.desc}</p>`+AV+box("Como usar este roteiro","<ul><li>São <b>4 semanas</b>. A Semana 1 não tem prática.</li><li>O roteiro <b>não aumenta</b> automaticamente a intensidade, a duração ou as repetições.</li><li>Os exercícios são <b>apenas</b> os do Kit Essencial, com as instruções originais.</li><li>Dias ruins existem: descansar também faz parte.</li></ul>")+(p==="C"?box("Orientações do profissional","<p>Escreva aqui as restrições ou orientações que o profissional deu:</p><div class='lines'>"+'<div style="border-bottom:1px solid #b9c7d9;height:9mm"></div>'.repeat(3)+"</div>","w"):"") ,++n);
+  for(let w=1;w<=4;w++) h+=pg(band("Semana "+w+" de 4",{1:"Conhecendo o material e organizando o ambiente",2:"Familiarização com as atividades autorizadas",3:"Organização e registro das atividades",4:"Revisão da rotina e dúvidas"}[w])+semana(w,p),++n);
+  if(p==="C"){
+    h+=pg(band("Perfil C","Exercícios do Kit por região do corpo")+`<p class="small">O profissional marca <b>só</b> os exercícios liberados. Faça somente os marcados.</p><div style="font-size:9.5pt" class="tight"><table><tr><th>Bloco</th><th>Exercício (Kit Essencial)</th><th>Repetições (original)</th><th>Liberado</th></tr>${BL.map(b=>b.ex.map((e,i)=>`<tr><td>${i==0?b.n+' · '+b.t:''}</td><td>${e[0]}</td><td>${e[1]}</td><td><span class="sq"></span></td></tr>`).join('')).join('')}</table></div>`,++n);
+  }
+  if(p==="B"){
+    h+=pg(band("Perfil B","Guia do familiar ou cuidador")+`<h2>Antes</h2>`+ck(["Confirmar que o profissional liberou a atividade","Cadeira firme, sem rodinhas, encostada na parede","Calçado fechado, água por perto"])+`<h2>Durante</h2>`+ck(["Ficar por perto e observar conforto","Incentivar, sem pressionar","Parar diante de dor, tontura, falta de ar ou cansaço excessivo"])+`<h2>Depois</h2>`+ck(["Perguntar como ela se sentiu","Anotar no diário","Combinar o próximo dia"])+box("O que este guia não faz","<p>Não ensina transferências, mobilização ou apoio físico. Esses procedimentos exigem treinamento profissional individual.</p>","w"),++n);
+  }
+  h+=pg(band("Acompanhamento","Diário de acompanhamento")+`<table><tr><th>Data</th><th>Bloco / atividade</th><th>Como se sentiu</th><th>Observações e dúvidas</th></tr>${'<tr><td>&nbsp;<br>&nbsp;</td><td></td><td></td><td></td></tr>'.repeat(12)}</table>`,++n);
+  h+=pg(band("Organização","Checklist de organização")+`<h2>Ambiente</h2>`+ck(["Cadeira firme, sem rodinhas, encostada na parede","Passagens livres e tapetes soltos retirados","Luz suficiente","Calçado fechado e antiderrapante","Água por perto"])+`<h2>Rotina</h2>`+ck(["Horário combinado com a pessoa","Liberações do profissional anotadas","Registro da semana do Kit preenchido","Dúvidas anotadas para a próxima consulta"])+`<h2>Segurança</h2>`+ck(["Sei quando parar: dor, tontura, falta de ar, desconforto","Sei quando procurar atendimento e o telefone de emergência (192)"]),++n);
+  D.innerHTML=h;
+}
+// ====================== INÍCIO ======================
+const sp=new URLSearchParams(location.search);
+if(sp.get('modelo')&&PERFIS[sp.get('modelo')]){montarDoc(sp.get('modelo'),sp.get('nome')||'');document.querySelector('#screen').style.display='none';D.style.display='block';document.querySelector('header').style.display='none'}
+else intro();
+</script></body></html>
