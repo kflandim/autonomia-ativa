@@ -16,6 +16,14 @@ body{margin:0}
 .marquee:hover .marquee-track{animation-play-state:paused}
 .marquee-set{display:flex;gap:20px;padding-right:20px}
 @keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.bk-g{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px}
+.bk{border:1px solid #DDEEEA;border-radius:18px;overflow:hidden;background:#fff}
+.bk-im{background:#F5F9F7;height:150px;display:flex;align-items:flex-end;justify-content:center;padding:36px 10px 8px;position:relative;box-sizing:border-box}
+.bk-im img{max-height:106px;max-width:100%;object-fit:contain;mix-blend-mode:multiply}
+.bk-dark{background:#0B4A47}.bk-days{color:#fff;font:700 20px Lexend,system-ui,sans-serif;text-align:center;line-height:1.5}
+.bk-n{position:absolute;top:10px;left:10px;background:#0B4A47;color:#fff;font:700 13px Lexend,system-ui,sans-serif;border-radius:999px;padding:4px 10px}.bk-gold{background:#C98A00}
+.bk-t{padding:14px 16px 16px}.bk-t h3{margin:0 0 4px;font:700 18px Lexend,system-ui,sans-serif}.bk-t p{margin:0;color:#4A625F;font-size:15px;line-height:1.45}
+.bk-tag{display:inline-block;margin-top:8px;font-size:13px;font-weight:700;color:#0E6B66;background:#DDEEEA;border-radius:999px;padding:3px 10px}
 .shot{background-color:#E7F3F0;background-repeat:no-repeat}
 .shot-full{background-color:transparent;background-image:url(img/mockup.webp);background-size:100% 100%}
 .shot-a{background-image:url(img/mockup.webp);background-size:195.9% auto;background-position:0% 5.9%}
@@ -95,31 +103,13 @@ document.addEventListener('click',function(e){var a=e.target.closest&&e.target.c
 <div style="background: #FFFFFF; padding: 40px 20px">
 <div style="max-width: 1040px; margin: 0 auto; display: flex; flex-direction: column; gap: 22px">
 <h2 style="margin: 0; text-align: center; font-family: Lexend, system-ui, sans-serif; font-weight: 800; font-size: 26px; line-height: 1.2">Tudo que você precisa pra <span style="color: #0E6B66">começar hoje</span></h2>
-<div style="display: flex; flex-wrap: wrap; gap: 12px">
-<div style="flex: 1 1 260px; background: #F5F9F7; border-radius: 16px; padding: 16px 18px; display: flex; flex-direction: column; gap: 6px">
-<div style="display: flex; gap: 12px; align-items: center"><div aria-hidden="true" style="flex: none; width: 42px; height: 42px; border-radius: 50%; background: #DDEEEA; font-size: 22px; line-height: 1; display: flex; align-items: center; justify-content: center">🙆</div><h3 style="margin: 0; font-family: Lexend, system-ui, sans-serif; font-weight: 700; font-size: 18px">Pescoço e ombros</h3></div>
-<p style="margin: 0; color: #4A625F">Movimentos lentos e suaves, feitos sentado, um de cada vez.</p>
-</div>
-<div style="flex: 1 1 260px; background: #F5F9F7; border-radius: 16px; padding: 16px 18px; display: flex; flex-direction: column; gap: 6px">
-<div style="display: flex; gap: 12px; align-items: center"><div aria-hidden="true" style="flex: none; width: 42px; height: 42px; border-radius: 50%; background: #DDEEEA; font-size: 22px; line-height: 1; display: flex; align-items: center; justify-content: center">💪</div><h3 style="margin: 0; font-family: Lexend, system-ui, sans-serif; font-weight: 700; font-size: 18px">Braços e mãos</h3></div>
-<p style="margin: 0; color: #4A625F">Exercícios simples, com apoio, para fazer juntos na sala.</p>
-</div>
-<div style="flex: 1 1 260px; background: #F5F9F7; border-radius: 16px; padding: 16px 18px; display: flex; flex-direction: column; gap: 6px">
-<div style="display: flex; gap: 12px; align-items: center"><div aria-hidden="true" style="flex: none; width: 42px; height: 42px; border-radius: 50%; background: #DDEEEA; font-size: 22px; line-height: 1; display: flex; align-items: center; justify-content: center">🦵</div><h3 style="margin: 0; font-family: Lexend, system-ui, sans-serif; font-weight: 700; font-size: 18px">Pernas e joelhos</h3></div>
-<p style="margin: 0; color: #4A625F">Passo a passo ilustrado, sentado na cadeira, no ritmo dele(a).</p>
-</div>
-<div style="flex: 1 1 260px; background: #F5F9F7; border-radius: 16px; padding: 16px 18px; display: flex; flex-direction: column; gap: 6px">
-<div style="display: flex; gap: 12px; align-items: center"><div aria-hidden="true" style="flex: none; width: 42px; height: 42px; border-radius: 50%; background: #DDEEEA; font-size: 22px; line-height: 1; display: flex; align-items: center; justify-content: center">⚖️</div><h3 style="margin: 0; font-family: Lexend, system-ui, sans-serif; font-weight: 700; font-size: 18px">Equilíbrio e postura</h3></div>
-<p style="margin: 0; color: #4A625F">Sempre com apoio de cadeira ou parede e uma dica de segurança em cada exercício.</p>
-</div>
-<div style="flex: 1 1 260px; background: #F5F9F7; border-radius: 16px; padding: 16px 18px; display: flex; flex-direction: column; gap: 6px">
-<div style="display: flex; gap: 12px; align-items: center"><div aria-hidden="true" style="flex: none; width: 42px; height: 42px; border-radius: 50%; background: #DDEEEA; font-size: 22px; line-height: 1; display: flex; align-items: center; justify-content: center">🤸</div><h3 style="margin: 0; font-family: Lexend, system-ui, sans-serif; font-weight: 700; font-size: 18px">Alongamento geral</h3></div>
-<p style="margin: 0; color: #4A625F">Alongamentos confortáveis, respeitando o limite de cada pessoa.</p>
-</div>
-<div style="flex: 1 1 260px; background: #F5F9F7; border-radius: 16px; padding: 16px 18px; display: flex; flex-direction: column; gap: 6px">
-<div style="display: flex; gap: 12px; align-items: center"><div aria-hidden="true" style="flex: none; width: 42px; height: 42px; border-radius: 50%; background: #DDEEEA; font-size: 22px; line-height: 1; display: flex; align-items: center; justify-content: center">📅</div><h3 style="margin: 0; font-family: Lexend, system-ui, sans-serif; font-weight: 700; font-size: 18px">Sugestão de rotina semanal</h3></div>
-<p style="margin: 0; color: #4A625F">Um plano pronto de segunda a domingo: é só abrir e seguir.</p>
-</div>
+<div class="bk-g">
+<div class="bk"><div class="bk-im"><span class="bk-n">BLOCO 1</span><img src="img/neck.webp" alt="Pescoço e ombros" loading="lazy"></div><div class="bk-t"><h3>Pescoço e ombros</h3><p>Movimentos lentos e suaves, feitos sentado, um de cada vez.</p><span class="bk-tag">5 a 10 repetições</span></div></div>
+<div class="bk"><div class="bk-im"><span class="bk-n">BLOCO 2</span><img src="img/bracos.webp" alt="Braços e mãos" loading="lazy"></div><div class="bk-t"><h3>Braços e mãos</h3><p>Exercícios simples, com apoio, para fazer juntos na sala.</p><span class="bk-tag">10 repetições</span></div></div>
+<div class="bk"><div class="bk-im"><span class="bk-n">BLOCO 3</span><img src="img/joelho.webp" alt="Pernas e joelhos" loading="lazy"></div><div class="bk-t"><h3>Pernas e joelhos</h3><p>Passo a passo ilustrado, sentado na cadeira, no ritmo dele(a).</p><span class="bk-tag">10 repetições</span></div></div>
+<div class="bk"><div class="bk-im"><span class="bk-n">BLOCO 4</span><img src="img/equilibrio.webp" alt="Equilíbrio e postura" loading="lazy"></div><div class="bk-t"><h3>Equilíbrio e postura</h3><p>Sempre com apoio de cadeira ou parede e dica de segurança.</p><span class="bk-tag">Kit Completo</span></div></div>
+<div class="bk"><div class="bk-im"><span class="bk-n">BLOCO 5</span><img src="img/alongpernas.webp" alt="Alongamento geral" loading="lazy"></div><div class="bk-t"><h3>Alongamento geral</h3><p>Alongamentos confortáveis, respeitando o limite de cada pessoa.</p><span class="bk-tag">Kit Completo</span></div></div>
+<div class="bk"><div class="bk-im bk-dark"><span class="bk-n bk-gold">BLOCO 6</span><div class="bk-days">Seg · Ter · Qua<br>Qui · Sex · Sáb</div></div><div class="bk-t"><h3>Rotina semanal pronta</h3><p>De segunda a domingo: é só abrir e seguir.</p><span class="bk-tag">Kit Completo</span></div></div>
 </div>
 <div style="text-align: center; background: #0B4A47; color: #FFFFFF; border-radius: 16px; padding: 16px 18px">
 <div style="font-family: Lexend, system-ui, sans-serif; font-weight: 700; font-size: 18px">Para fazer em casa, no ritmo dele(a)</div>
