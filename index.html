@@ -24,6 +24,12 @@ body{margin:0}
 .bk-n{position:absolute;top:10px;left:10px;background:#0B4A47;color:#fff;font:700 13px Lexend,system-ui,sans-serif;border-radius:999px;padding:4px 10px}.bk-gold{background:#C98A00}
 .bk-t{padding:14px 16px 16px}.bk-t h3{margin:0 0 4px;font:700 18px Lexend,system-ui,sans-serif}.bk-t p{margin:0;color:#4A625F;font-size:15px;line-height:1.45}
 .bk-tag{display:inline-block;margin-top:8px;font-size:13px;font-weight:700;color:#0E6B66;background:#DDEEEA;border-radius:999px;padding:3px 10px}
+.pq{display:flex;flex-wrap:wrap;gap:20px;align-items:center;justify-content:center}
+.pq-img{flex:1 1 280px;max-width:420px}.pq-img img{width:100%;height:auto;border-radius:20px;display:block}
+.pq-cards{flex:1 1 300px;display:flex;flex-direction:column;gap:14px}
+.pq-c{border:2px solid #DDEEEA;border-radius:18px;padding:20px 22px;background:#fff}
+.pq-c h3{margin:0 0 8px;font:700 21px Lexend,system-ui,sans-serif;color:#0E6B66}.pq-c p{margin:0;color:#4A625F;font-size:17px;line-height:1.5}
+.pq-c .pq-s{margin-top:10px;color:#12302d;font-weight:600}
 .shot{background-color:#E7F3F0;background-repeat:no-repeat}
 .shot-full{background-color:transparent;background-image:url(img/mockup.webp);background-size:100% 100%}
 .shot-a{background-image:url(img/mockup.webp);background-size:195.9% auto;background-position:0% 5.9%}
@@ -617,27 +623,12 @@ document.addEventListener('click',function(e){var a=e.target.closest&&e.target.c
 <!-- Para quem é -->
 <div style="background: #FFFFFF; padding: 40px 20px">
 <div style="max-width: 1040px; margin: 0 auto; display: flex; flex-direction: column; gap: 22px">
-<h2 style="margin: 0; text-align: center; font-family: Lexend, system-ui, sans-serif; font-weight: 800; font-size: 26px; line-height: 1.2">Para quem é este <span style="color: #0E6B66">material</span></h2>
-<div style="display: flex; flex-wrap: wrap; gap: 12px">
-<div style="flex: 1 1 260px; border: 2px solid #DDEEEA; border-radius: 16px; padding: 16px 18px; display: flex; flex-direction: column; gap: 8px">
-<h3 style="margin: 0; font-family: Lexend, system-ui, sans-serif; font-weight: 700; font-size: 18px; color: #0E6B66">Idosos</h3>
-<p style="margin: 0; color: #4A625F">Para quem quer sair do sedentarismo com calma: movimentos simples, no seu ritmo, sem sair de casa.</p>
-</div>
-<div style="flex: 1 1 260px; border: 2px solid #DDEEEA; border-radius: 16px; padding: 16px 18px; display: flex; flex-direction: column; gap: 8px">
-<h3 style="margin: 0; font-family: Lexend, system-ui, sans-serif; font-weight: 700; font-size: 18px; color: #0E6B66">Famílias</h3>
-<p style="margin: 0; color: #4A625F">Para quem quer ajudar um pai, uma mãe ou um avô a se movimentar, com um passo a passo fácil de acompanhar.</p>
-</div>
-<div style="flex: 1 1 260px; border: 2px solid #DDEEEA; border-radius: 16px; padding: 16px 18px; display: flex; flex-direction: column; gap: 8px">
-<h3 style="margin: 0; font-family: Lexend, system-ui, sans-serif; font-weight: 700; font-size: 18px; color: #0E6B66">Cuidadores</h3>
-<p style="margin: 0; color: #4A625F">Atividades prontas para incluir na rotina do dia, sem improviso e com mais segurança para quem cuida.</p>
-</div>
-<div style="flex: 1 1 260px; border: 2px solid #DDEEEA; border-radius: 16px; padding: 16px 18px; display: flex; flex-direction: column; gap: 8px">
-<h3 style="margin: 0; font-family: Lexend, system-ui, sans-serif; font-weight: 700; font-size: 18px; color: #0E6B66">Personal trainers</h3>
-<p style="margin: 0; color: #4A625F">Variedade para planejar aulas e atendimentos de idosos sem gastar horas montando tudo do zero.</p>
-</div>
-<div style="flex: 1 1 260px; border: 2px solid #DDEEEA; border-radius: 16px; padding: 16px 18px; display: flex; flex-direction: column; gap: 8px">
-<h3 style="margin: 0; font-family: Lexend, system-ui, sans-serif; font-weight: 700; font-size: 18px; color: #0E6B66">Fisioterapeutas</h3>
-<p style="margin: 0; color: #4A625F">Exercícios organizados por bloco e com progressão, para apoiar o plano de atendimento de cada paciente.</p>
+<h2 style="margin: 0; text-align: center; font-family: Lexend, system-ui, sans-serif; font-weight: 800; font-size: 26px; line-height: 1.2">Feito para quem quer <span style="color: #0E6B66">ajudar quem ama</span></h2>
+<div class="pq">
+<div class="pq-img"><img src="img/mockup.webp" alt="Kit Autonomia Ativa no celular e em páginas impressas" loading="lazy"></div>
+<div class="pq-cards">
+<div class="pq-c"><h3>Famílias</h3><p>Para quem quer ajudar um pai, uma mãe ou um avô a se movimentar, com um passo a passo fácil de acompanhar.</p><p class="pq-s">Tudo pensado para fazer sentado ou com apoio, em casa, no ritmo dele(a).</p></div>
+<div class="pq-c"><h3>Cuidadores</h3><p>Atividades prontas para incluir na rotina do dia, sem improviso.</p></div>
 </div>
 </div>
 </div>
